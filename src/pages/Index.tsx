@@ -179,42 +179,78 @@ const RestaurantMenu = () => {
     meat: {
       title: "منيو اللحم",
       titleEn: "MEAT MENU",
-      items: [
+      categories: [
         {
-          name: "كلاسيك تشيز بيف",
-          nameEn: "Classic Cheese Beef",
-          price: "159",
-          description: "قطعة لحم بقري صافي + خس + طماطم + بصل + خيار مخلل + صوص جبنة + صوص كلاسيك"
+          name: "رايق",
+          nameEn: "Regular",
+          items: [
+            {
+              name: "كلاسيك تشيز بيف",
+              nameEn: "Classic Cheese Beef",
+              price: "159",
+              description: "قطعة لحم بقري صافي + خس + طماطم + بصل + خيار مخلل + صوص جبنة + صوص كلاسيك"
+            },
+            {
+              name: "دراجون هيل",
+              nameEn: "Dragon Hill",
+              price: "159",
+              description: "قطعة لحم بقري صافي + خس + طماطم + بصل + خيار مخلل + هالبينو + اسبايسي صوص"
+            },
+            {
+              name: "مشروم برجر",
+              nameEn: "Mushroom Burger",
+              price: "165",
+              description: "قطعة لحم بقري صافي + خس + طماطم + بصل + مشروم كريمي + خيار مخلل"
+            },
+            {
+              name: "سكول أرت",
+              nameEn: "School Art",
+              price: "179",
+              description: "قطعة لحم بقري صافي + خس + طماطم + بصل + بسطرمة + بيكون + سيدي صوص"
+            },
+            {
+              name: "تريبل وي",
+              nameEn: "Triple Way",
+              price: "195",
+              description: "قطعة لحم بقري صافي + خس + طماطم + بصل مكرمل + سيدي صوص"
+            }
+          ]
         },
         {
-          name: "دراجون هيل",
-          nameEn: "Dragon Hill",
-          price: "159",
-          description: "قطعة لحم بقري صافي + خس + طماطم + بصل + خيار مخلل + هالبينو + اسبايسي صوص"
-        },
-        {
-          name: "مشروم برجر",
-          nameEn: "Mushroom Burger",
-          price: "165",
-          description: "قطعة لحم بقري صافي + خس + طماطم + بصل + مشروم كريمي + خيار مخلل"
-        },
-        {
-          name: "سكول أرت",
-          nameEn: "School Art",
-          price: "179",
-          description: "قطعة لحم بقري صافي + خس + طماطم + بصل + بسطرمة + بيكون + سيدي صوص "
-        },
-        {
-          name: "تريبل وي",
-          nameEn: "Triple Way",
-          price: "195",
-          description: "قطعة لحم بقري صافي + خس + طماطم + بصل مكرمل + سيدي صوص"
-        },
-        {
-          name: "برجر راب رول",
-          nameEn: "Burger Wrap Roll",
-          price: "149",
-          description: "قطعة لحم بقري صافي + بصل + فلفل ألوان  + مشروم + بسطرمة + سيدي   صوص"
+          name: "هيشبعك",
+          nameEn: "Combo",
+          items: [
+            {
+              name: "كلاسيك تشيز بيف + بطاطس",
+              nameEn: "Classic Cheese Beef + Fries",
+              price: "189",
+              description: "قطعة لحم بقري صافي + خس + طماطم + بصل + خيار مخلل + صوص جبنة + صوص كلاسيك + بطاطس"
+            },
+            {
+              name: "دراجون هيل + بطاطس",
+              nameEn: "Dragon Hill + Fries",
+              price: "189",
+              description: "قطعة لحم بقري صافي + خس + طماطم + بصل + خيار مخلل + هالبينو + اسبايسي صوص + بطاطس"
+            },
+            {
+              name: "مشروم برجر + بطاطس",
+              nameEn: "Mushroom Burger + Fries",
+              price: "199",
+              description: "قطعة لحم بقري صافي + خس + طماطم + بصل + مشروم كريمي + خيار مخلل + بطاطس"
+            },
+            {
+              name: "سكول أرت + بطاطس",
+              nameEn: "School Art + Fries",
+              price: "209",
+              description: "قطعة لحم بقري صافي + خس + طماطم + بصل + بسطرمة + بيكون + سيدي صوص + بطاطس"
+            },
+            {
+              name: "تريبل وي + بطاطس",
+              nameEn: "Triple Way + Fries",
+              price: "225",
+              description: "قطعة لحم بقري صافي + خس + طماطم + بصل مكرمل + سيدي صوص + بطاطس"
+            }
+          ]
         }
       ]
     },
@@ -269,6 +305,12 @@ const RestaurantMenu = () => {
           nameEn: "Core Wrap Chicken",
           price: "120",
           description: "استربس مقلي  + صوص اسبايسي + هالبينو +  صوص  جبنة"
+        },
+        {
+          name: "برجر راب رول",
+          nameEn: "Burger Wrap Roll",
+          price: "149",
+          description: "قطعة لحم بقري صافي + بصل + فلفل ألوان  + مشروم + بسطرمة + سيدي   صوص"
         }]
     }
   };
@@ -513,7 +555,6 @@ const RestaurantMenu = () => {
                       {menuData[item.category]?.titleEn || ''}
                     </span>
                     <button className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg transition-colors duration-300 transform hover:scale-105">
-                      اطلب الآن
                     </button>
                   </div>
                 </div>
