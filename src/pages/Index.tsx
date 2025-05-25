@@ -14,32 +14,27 @@ const RestaurantMenu = () => {
       items: [{
         name: "كلاسيك تشيز بيف",
         nameEn: "Classic Cheese Beef",
-        price: "159",
-        originalPrice: "129",
+        price: "25",
         description: "لحمة بقري مع جبنة شيدر وخس وطماطم"
       }, {
         name: "دراجون فيل",
         nameEn: "Dragon Feel",
-        price: "159",
-        originalPrice: "129",
+        price: "10",
         description: "لحمة بقري حارة مع صوص دراجون"
       }, {
         name: "مشروم برجر",
         nameEn: "Mushroom Burger",
-        price: "165",
-        originalPrice: "135",
+        price: "25",
         description: "لحمة بقري مع مشروم طازج"
       }, {
         name: "سكورن آرت",
         nameEn: "Scorn Art",
-        price: "179",
-        originalPrice: "149",
+        price: "35",
         description: "لحمة بقري مع صوص خاص"
       }, {
         name: "تريبل وي",
         nameEn: "Triple Way",
-        price: "165",
-        originalPrice: "135",
+        price: "65",
         description: "ثلاث قطع لحمة بقري"
       }]
     },
@@ -49,27 +44,27 @@ const RestaurantMenu = () => {
       items: [{
         name: "كلاسيك سدق",
         nameEn: "Classic Chicken",
-        price: "135",
+        price: "15",
         description: "قطعة دجاج مشوية مع الخضار"
       }, {
         name: "دراجون فيل سدق",
         nameEn: "Dragon Feel Chicken",
-        price: "138",
+        price: "15",
         description: "دجاج حار مع صوص دراجون"
       }, {
         name: "مشروم سدق",
         nameEn: "Mushroom Chicken",
-        price: "140",
+        price: "25",
         description: "دجاج مع مشروم طازج"
       }, {
         name: "سكورن آرت سدق",
         nameEn: "Scorn Art Chicken",
-        price: "155",
+        price: "25",
         description: "دجاج مع صوص خاص"
       }, {
         name: "تريبل وي سدق",
         nameEn: "Triple Way Chicken",
-        price: "140",
+        price: "20",
         description: "ثلاث قطع دجاج"
       }]
     },
@@ -79,22 +74,22 @@ const RestaurantMenu = () => {
       items: [{
         name: "كانتاكي فرايد",
         nameEn: "Kentucky Fried",
-        price: "19",
+        price: "70",
         description: "قطع دجاج مقلية"
       }, {
         name: "كانتاكي وي",
         nameEn: "Kentucky Way",
-        price: "125",
+        price: "80",
         description: "وجبة دجاج كاملة"
       }, {
         name: "كانتاكي فيل",
         nameEn: "Kentucky Feel",
-        price: "25",
+        price: "95",
         description: "قطع دجاج حارة"
       }, {
         name: "تشيكن رول",
         nameEn: "Chicken Roll",
-        price: "125",
+        price: "30",
         description: "رول دجاج بالخضار"
       }, {
         name: "رافي ناجتس",
@@ -109,7 +104,7 @@ const RestaurantMenu = () => {
       items: [{
         name: "بيكونا",
         nameEn: "Bacon",
-        price: "15",
+        price: "25",
         description: "شرائح لحم مقدد"
       }, {
         name: "سموك تركي",
@@ -119,13 +114,28 @@ const RestaurantMenu = () => {
       }, {
         name: "موزا",
         nameEn: "Moza",
-        price: "15",
+        price: "10",
         description: "جبنة موزاريلا"
       }, {
         name: "خيار مخلل",
         nameEn: "Pickled Cucumber",
-        price: "10",
+        price: "15",
         description: "خيار مخلل طازج"
+      }, {
+        name: "جبنة شيدر",
+        nameEn: "Cheddar Cheese",
+        price: "25",
+        description: "شرائح جبنة شيدر"
+      }, {
+        name: "صوص حار",
+        nameEn: "Hot Sauce",
+        price: "15",
+        description: "صوص حار إضافي"
+      }, {
+        name: "صوص كريمي",
+        nameEn: "Creamy Sauce",
+        price: "10",
+        description: "صوص كريمي طازج"
       }]
     },
     salads: {
@@ -307,8 +317,6 @@ const RestaurantMenu = () => {
         </div>
       </nav>
 
-
-
       {/* Hero Section */}
       <HeroSection />
       {/* Menu Section */}
@@ -394,7 +402,8 @@ const RestaurantMenu = () => {
                     <span className="uppercase tracking-wider">
                       {menuData[item.category]?.titleEn || ''}
                     </span>
-                    <button className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg transition-colors duration-300 transform hover:scale-">
+                    <button className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg transition-colors duration-300 transform hover:scale-105">
+                      اطلب الآن
                     </button>
                   </div>
                 </div>
@@ -420,7 +429,7 @@ const RestaurantMenu = () => {
           </div>
           <div className="border-t border-gray-700 pt-6">
             <p className="text-gray-400 transform hover:text-white transition-colors duration-300">
-              &copy; 2025 سيدي بـــرجر. جميع الحقوق محفوظة.
+              © 2025 سيدي بـــرجر. جميع الحقوق محفوظة.
             </p>
           </div>
         </div>
