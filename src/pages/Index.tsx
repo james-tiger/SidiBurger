@@ -369,6 +369,31 @@ const RestaurantMenu = () => {
     }
   };
 
+      chickenWraps: {
+      title: "منيو الفراخ",
+      titleEn: "CHICKEN WRAPS",
+      items: [
+        {
+          name: "تشيز ن راب رول",
+          nameEn: "Cheese Wrap Roll",
+          price: "125",
+          description: "صدر فراخ مشوي قطع + بصل + فلفل ألوان + مشروم + بسطرمة + صوص أعشاب "
+        },
+        {
+          name: "كور راب تشيزكن",
+          nameEn: "Core Wrap Chicken",
+          price: "120",
+          description: "استربس مقلي  + صوص اسبايسي + هالبينو +  صوص  جبنة"
+        },
+        {
+          name: "برجر راب رول",
+          nameEn: "Burger Wrap Roll",
+          price: "149",
+          description: "قطعة لحم بقري صافي + بصل + فلفل ألوان  + مشروم + بسطرمة + سيدي   صوص"
+        }]
+    }
+  };
+
   const categories = [
     { key: 'all', name: 'الكل', nameEn: 'ALL' },
     { key: 'appetizers', name: 'الأضافات', nameEn: 'APPETIZERS' },
@@ -377,6 +402,7 @@ const RestaurantMenu = () => {
     { key: 'chicken', name: 'السدق', nameEn: 'CHICKEN' },
     { key: 'meat', name: 'اللحم', nameEn: 'MEAT' },
     { key: 'smashBurger', name: 'السماش برجر', nameEn: 'SMASH BURGER' }
+    { key: 'chickenWraps', name: 'الفراخ', nameEn: 'CHICKEN WRAPS' }
   ];
 
   const getFilteredItems = () => {
