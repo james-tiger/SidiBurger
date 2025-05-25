@@ -217,7 +217,7 @@ const RestaurantMenu = () => {
           ]
         },
         {
-          name: "هيشبعك",
+          name: "هيشبعك ومعاه بطاطس",
           nameEn: "Combo",
           items: [
             {
