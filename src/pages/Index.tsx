@@ -87,23 +87,23 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Navigation */}
-      <nav className="bg-black text-white sticky top-0 z-50 shadow-lg">
+      <nav className="bg-black text-white sticky top-0 z-50 shadow-2xl">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-4">
-              <div className="text-2xl font-bold text-red-500">🔥 بيتزا برجر</div>
+              <div className="text-2xl font-bold text-red-500 transform hover:scale-110 transition-transform duration-300">🔥 بيتزا برجر</div>
             </div>
             
             {/* Desktop Menu */}
             <div className="hidden md:flex space-x-8">
-              <a href="#home" className="hover:text-red-500 transition-colors">الرئيسية</a>
-              <a href="#menu" className="hover:text-red-500 transition-colors">القائمة</a>
-              <a href="#contact" className="hover:text-red-500 transition-colors">اتصل بنا</a>
+              <a href="#home" className="hover:text-red-500 transition-colors duration-300 transform hover:scale-105">الرئيسية</a>
+              <a href="#menu" className="hover:text-red-500 transition-colors duration-300 transform hover:scale-105">قائمة الطعام</a>
+              <a href="#contact" className="hover:text-red-500 transition-colors duration-300 transform hover:scale-105">اتصل بنا</a>
             </div>
 
             {/* Mobile Menu Button */}
             <button 
-              className="md:hidden text-white"
+              className="md:hidden text-white transform hover:scale-110 transition-transform duration-300"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -112,11 +112,11 @@ const Index = () => {
 
           {/* Mobile Menu */}
           {mobileMenuOpen && (
-            <div className="md:hidden bg-black border-t border-gray-700">
+            <div className="md:hidden bg-black border-t border-gray-700 transform transition-all duration-300">
               <div className="px-2 pt-2 pb-3 space-y-1">
-                <a href="#home" className="block px-3 py-2 text-white hover:text-red-500">الرئيسية</a>
-                <a href="#menu" className="block px-3 py-2 text-white hover:text-red-500">القائمة</a>
-                <a href="#contact" className="block px-3 py-2 text-white hover:text-red-500">اتصل بنا</a>
+                <a href="#home" className="block px-3 py-2 text-white hover:text-red-500 transform hover:translate-x-2 transition-all duration-300">الرئيسية</a>
+                <a href="#menu" className="block px-3 py-2 text-white hover:text-red-500 transform hover:translate-x-2 transition-all duration-300">قائمة الطعام</a>
+                <a href="#contact" className="block px-3 py-2 text-white hover:text-red-500 transform hover:translate-x-2 transition-all duration-300">اتصل بنا</a>
               </div>
             </div>
           )}
@@ -127,22 +127,37 @@ const Index = () => {
       <HeroSection />
 
       {/* Menu Sections */}
-      <section id="menu" className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">قائمة الطعام</h2>
-            <p className="text-xl text-gray-600">اكتشف مجموعتنا المميزة من الأطباق الشهية</p>
+      <section id="menu" className="py-20 bg-gradient-to-br from-white via-gray-50 to-gray-100 relative overflow-hidden">
+        {/* Background decorative elements */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-20 left-20 w-32 h-32 bg-red-500 rounded-full animate-float3d"></div>
+          <div className="absolute bottom-20 right-20 w-24 h-24 bg-yellow-400 rounded-full animate-float3d animation-delay-2000"></div>
+          <div className="absolute top-1/2 left-1/2 w-16 h-16 bg-green-400 rounded-full animate-float3d animation-delay-1000"></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-bold text-gray-800 mb-6 transform hover:scale-105 transition-transform duration-300 drop-shadow-lg">قائمة الطعام</h2>
+            <p className="text-2xl text-gray-600 transform hover:translate-y-1 transition-transform duration-300">اكتشف مجموعتنا المميزة من الأطباق الشهية</p>
+            <div className="mt-8 w-24 h-1 bg-gradient-to-r from-red-500 to-red-700 mx-auto rounded-full shadow-lg"></div>
           </div>
 
-          <div className="space-y-12">
-            {Object.entries(menuData).map(([key, section]) => (
-              <MenuSection 
+          <div className="space-y-16">
+            {Object.entries(menuData).map(([key, section], index) => (
+              <div
                 key={key}
-                title={section.title}
-                titleEn={section.titleEn}
-                items={section.items}
-                color={section.color}
-              />
+                className="transform transition-all duration-500"
+                style={{
+                  animationDelay: `${index * 0.2}s`
+                }}
+              >
+                <MenuSection 
+                  title={section.title}
+                  titleEn={section.titleEn}
+                  items={section.items}
+                  color={section.color}
+                />
+              </div>
             ))}
           </div>
         </div>
@@ -151,15 +166,20 @@ const Index = () => {
       {/* Contact Section */}
       <ContactSection />
 
-      {/* Footer */}
-      <footer className="bg-black text-white py-8">
-        <div className="container mx-auto px-4 text-center">
-          <div className="mb-4">
-            <div className="text-2xl font-bold text-red-500 mb-2">🔥 بيتزا برجر</div>
-            <p className="text-gray-400">أفضل طعم في المدينة</p>
+      {/* Enhanced Footer */}
+      <footer className="bg-gradient-to-r from-black via-gray-900 to-black text-white py-12 relative overflow-hidden">
+        {/* Background pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0 bg-gradient-to-br from-red-500/20 to-transparent"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <div className="mb-6">
+            <div className="text-3xl font-bold text-red-500 mb-3 transform hover:scale-110 transition-transform duration-300">🔥 بيتزا برجر</div>
+            <p className="text-gray-400 text-lg">أفضل طعم في المدينة</p>
           </div>
-          <div className="border-t border-gray-700 pt-4">
-            <p className="text-gray-400">&copy; 2024 بيتزا برجر. جميع الحقوق محفوظة.</p>
+          <div className="border-t border-gray-700 pt-6">
+            <p className="text-gray-400 transform hover:text-white transition-colors duration-300">&copy; 2024 بيتزا برجر. جميع الحقوق محفوظة.</p>
           </div>
         </div>
       </footer>
