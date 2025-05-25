@@ -330,10 +330,23 @@ const RestaurantMenu = () => {
     if (activeCategory === 'all') {
       let allItems = [];
       Object.keys(menuData).forEach(key => {
-        allItems = [...allItems, ...menuData[key].items.map(item => ({ ...item, category: key }))];
+        if (menuData[key].categories) {
+          menuData[key].categories.forEach(category => {
+            allItems = [...allItems, ...category.items.map(item => ({ ...item, category: key, subCategory: category.name }))];
+          });
+        } else {
+          allItems = [...allItems, ...menuData[key].items.map(item => ({ ...item, category: key }))];
+        }
       });
       return allItems;
     }
+    
+    if (menuData[activeCategory]?.categories) {
+      return menuData[activeCategory].categories.flatMap(category => 
+        category.items.map(item => ({ ...item, category: activeCategory, subCategory: category.name }))
+      );
+    }
+    
     return menuData[activeCategory]?.items.map(item => ({ ...item, category: activeCategory })) || [];
   };
 
@@ -534,6 +547,11 @@ const RestaurantMenu = () => {
                       <p className="text-gray-300 text-sm md:text-base leading-relaxed mb-4">
                         {item.description}
                       </p>
+                      {item.subCategory && (
+                        <span className="inline-block bg-red-500/20 text-red-400 px-3 py-1 rounded-full text-xs">
+                          {item.subCategory}
+                        </span>
+                      )}
                     </div>
                     <div className="text-left ml-6">
                       <div className="text-2xl md:text-3xl font-bold text-red-500">
