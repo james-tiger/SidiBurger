@@ -366,9 +366,9 @@ const RestaurantMenu = () => {
           ]
         }
       ]
-    },
-    
-Made with
+    }
+  };
+
   const categories = [
     { key: 'all', name: 'الكل', nameEn: 'ALL' },
     { key: 'appetizers', name: 'الأضافات', nameEn: 'APPETIZERS' },
@@ -376,8 +376,7 @@ Made with
     { key: 'sides', name: 'أصناف جانبية', nameEn: 'SIDES' },
     { key: 'chicken', name: 'السدق', nameEn: 'CHICKEN' },
     { key: 'meat', name: 'اللحم', nameEn: 'MEAT' },
-    { key: 'smashBurger', name: 'السماش برجر', nameEn: 'SMASH BURGER' },
-    { key: 'chickenWraps', name: 'الفراخ', nameEn: 'CHICKEN WRAPS' }
+    { key: 'smashBurger', name: 'السماش برجر', nameEn: 'SMASH BURGER' }
   ];
 
   const getFilteredItems = () => {
@@ -473,9 +472,6 @@ Made with
                 <span className="text-red-500 text-2xl">📍</span>
                 <span className="text-lg">ابراج سيدي جابر البرج الخامس خلف محطة سيدي جابر بجوار مخبز لؤلؤة المدينة المنورة</span>
               </div>
-              <div className="flex items-center space-x-4 rtl:space-x-reverse">
-
-              </div>
             </div>
           </div>
         </div>
@@ -538,6 +534,7 @@ Made with
 
       {/* Hero Section */}
       <HeroSection />
+      
       {/* Menu Section */}
       <section id="menu" className="py-20 bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden">
         {/* Background Pattern */}
