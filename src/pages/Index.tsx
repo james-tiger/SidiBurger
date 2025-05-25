@@ -297,76 +297,21 @@ const RestaurantMenu = () => {
         {
           name: "تشيز ن راب رول",
           nameEn: "Cheese Wrap Roll",
-          categories: [
-            {
-              name: "سنجل",
-              nameEn: "Single",
-              price: "125",
-              description: "صدر فراخ مشوي قطع + بصل + فلفل ألوان + مشروم + بسطرمة + صوص أعشاب"
-            },
-            {
-              name: "دبــل مع بطاطس",
-              nameEn: "Double with Fries",
-              price: "180",
-              description: "صدر فراخ مشوي قطع + بصل + فلفل ألوان + مشروم + بسطرمة + صوص أعشاب + بطاطس"
-            },
-            {
-              name: "تربل مع بطاطس",
-              nameEn: "Triple with Fries",
-              price: "220",
-              description: "صدر فراخ مشوي قطع + بصل + فلفل ألوان + مشروم + بسطرمة + صوص أعشاب + بطاطس"
-            }
-          ]
+          price: "125",
+          description: "صدر فراخ مشوي قطع + بصل + فلفل ألوان + مشروم + بسطرمة + صوص أعشاب "
         },
         {
           name: "كور راب تشيزكن",
           nameEn: "Core Wrap Chicken",
-          categories: [
-            {
-              name: "سنجل",
-              nameEn: "Single",
-              price: "120",
-              description: "استربس مقلي + صوص اسبايسي + هالبينو + صوص جبنة"
-            },
-            {
-              name: "دبــل مع بطاطس",
-              nameEn: "Double with Fries",
-              price: "175",
-              description: "استربس مقلي + صوص اسبايسي + هالبينو + صوص جبنة + بطاطس"
-            },
-            {
-              name: "تربل مع بطاطس",
-              nameEn: "Triple with Fries",
-              price: "215",
-              description: "استربس مقلي + صوص اسبايسي + هالبينو + صوص جبنة + بطاطس"
-            }
-          ]
+          price: "120",
+          description: "استربس مقلي  + صوص اسبايسي + هالبينو +  صوص  جبنة"
         },
         {
           name: "برجر راب رول",
           nameEn: "Burger Wrap Roll",
-          categories: [
-            {
-              name: "سنجل",
-              nameEn: "Single",
-              price: "149",
-              description: "قطعة لحم بقري صافي + بصل + فلفل ألوان + مشروم + بسطرمة + سيدي صوص"
-            },
-            {
-              name: "دبــل مع بطاطس",
-              nameEn: "Double with Fries",
-              price: "199",
-              description: "قطعة لحم بقري صافي + بصل + فلفل ألوان + مشروم + بسطرمة + سيدي صوص + بطاطس"
-            },
-            {
-              name: "تربل مع بطاطس",
-              nameEn: "Triple with Fries",
-              price: "239",
-              description: "قطعة لحم بقري صافي + بصل + فلفل ألوان + مشروم + بسطرمة + سيدي صوص + بطاطس"
-            }
-          ]
-        }
-      ]
+          price: "149",
+          description: "قطعة لحم بقري صافي + بصل + فلفل ألوان  + مشروم + بسطرمة + سيدي   صوص"
+        }]
     }
   };
 
