@@ -11,7 +11,7 @@ export const HeroSection = () => {
 
       {/* Logo positioned at top center */}
       <div className="absolute top-8 left-1/2 transform -translate-x-1/2 z-20 my-[320px] mx-[-357px]">
-        <img alt="Restaurant Logo" src="/lovable-uploads/23f51f5c-e22b-4249-b804-4268b2fad09d.png" className="w-400 h-42 animate-float drop-shadow-2xl hover:scale-110 transition-transform duration-300 object-cover" />
+        <img alt="Restaurant Logo" src="/lovable-uploads/23f51f5c-e22b-4249-b804-4268b2fad09d.png" className="w-400 h-42 animate-float drop-shadow-2xl hover:scale-110 transition-transform duration-300 object-none" />
       </div>
 
       {/* Floating decorative elements */}
