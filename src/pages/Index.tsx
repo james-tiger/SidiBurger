@@ -206,7 +206,7 @@ const Index = () => {
             
             {/* Desktop Menu */}
             <div className="hidden md:flex space-x-8">
-              <a href="#home" className="hover:text-red-500 transition-colors duration-300 transform hover:scale-105">الرئيسية</a>
+              <a href="#home" className="hover:text-red-500 transition-colors duration-300 transform hover:scale-105 my-0 px-[26px]">الرئيسية</a>
               <a href="#menu" className="hover:text-red-500 transition-colors duration-300 transform hover:scale-105">قائمة الطعام</a>
               <a href="#contact" className="hover:text-red-500 transition-colors duration-300 transform hover:scale-105">اتصل بنا</a>
             </div>
