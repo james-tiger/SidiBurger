@@ -1,6 +1,5 @@
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
-import { HeroSection } from "@/components/HeroSection";
 
 const RestaurantMenu = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
