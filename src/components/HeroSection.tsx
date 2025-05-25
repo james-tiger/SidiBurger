@@ -1,27 +1,17 @@
-
 import { Button } from "@/components/ui/button";
-
 export const HeroSection = () => {
-  return (
-    <section id="home" className="relative bg-gradient-to-br from-gray-900 via-black to-gray-800 text-white py-24 overflow-hidden min-h-screen flex items-center">
+  return <section id="home" className="relative bg-gradient-to-br from-gray-900 via-black to-gray-800 text-white py-24 overflow-hidden min-h-screen flex items-center">
       {/* Dark textured background pattern */}
       <div className="absolute inset-0 opacity-20">
-        <div 
-          className="absolute inset-0" 
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M0 0h60v60H0z'/%3E%3Cpath d='M30 15l15 25H15z'/%3E%3C/g%3E%3C/svg%3E")`,
-            backgroundSize: '60px 60px'
-          }}
-        ></div>
+        <div className="absolute inset-0" style={{
+        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M0 0h60v60H0z'/%3E%3Cpath d='M30 15l15 25H15z'/%3E%3C/g%3E%3C/svg%3E")`,
+        backgroundSize: '60px 60px'
+      }}></div>
       </div>
 
       {/* Logo positioned at top center */}
-      <div className="absolute top-8 left-1/2 transform -translate-x-1/2 z-20">
-        <img 
-          src="https://d.top4top.io/p_34321np181.png" 
-          alt="Restaurant Logo" 
-          className="w-32 h-32 object-contain animate-float drop-shadow-2xl hover:scale-110 transition-transform duration-300"
-        />
+      <div className="absolute top-8 left-1/2 transform -translate-x-1/2 z-20 my-[320px] mx-[-357px]">
+        <img alt="Restaurant Logo" src="/lovable-uploads/23f51f5c-e22b-4249-b804-4268b2fad09d.png" className="w-400 h-42 animate-float drop-shadow-2xl hover:scale-110 transition-transform duration-300 object-cover" />
       </div>
 
       {/* Floating decorative elements */}
@@ -46,17 +36,10 @@ export const HeroSection = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-end">
-              <Button 
-                size="lg" 
-                className="bg-orange-500 hover:bg-orange-600 text-white px-10 py-6 text-lg font-bold rounded-lg transition-all duration-500 transform hover:scale-110 hover:shadow-2xl hover:shadow-orange-500/30"
-              >
+              <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white px-10 py-6 text-lg font-bold rounded-lg transition-all duration-500 transform hover:scale-110 hover:shadow-2xl hover:shadow-orange-500/30">
                 تصفح القائمة
               </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="border-2 border-orange-400 text-orange-400 hover:bg-orange-400 hover:text-black px-10 py-6 text-lg font-bold rounded-lg transition-all duration-500 transform hover:scale-110"
-              >
+              <Button size="lg" variant="outline" className="border-2 border-orange-400 text-orange-400 hover:bg-orange-400 hover:text-black px-10 py-6 text-lg font-bold rounded-lg transition-all duration-500 transform hover:scale-110">
                 عن المطعم
               </Button>
             </div>
@@ -74,13 +57,13 @@ export const HeroSection = () => {
                 <div className="absolute inset-8 rounded-full overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-br from-gray-700 to-gray-900 rounded-full"></div>
                   {/* Horizontal grates */}
-                  {[...Array(8)].map((_, i) => (
-                    <div key={i} className="absolute w-full h-1 bg-gradient-to-r from-gray-500 to-gray-400 shadow-lg" style={{top: `${12 + i * 10}%`}}></div>
-                  ))}
+                  {[...Array(8)].map((_, i) => <div key={i} className="absolute w-full h-1 bg-gradient-to-r from-gray-500 to-gray-400 shadow-lg" style={{
+                  top: `${12 + i * 10}%`
+                }}></div>)}
                   {/* Vertical grates */}
-                  {[...Array(8)].map((_, i) => (
-                    <div key={i} className="absolute h-full w-1 bg-gradient-to-b from-gray-500 to-gray-400 shadow-lg" style={{left: `${12 + i * 10}%`}}></div>
-                  ))}
+                  {[...Array(8)].map((_, i) => <div key={i} className="absolute h-full w-1 bg-gradient-to-b from-gray-500 to-gray-400 shadow-lg" style={{
+                  left: `${12 + i * 10}%`
+                }}></div>)}
                 </div>
                 
                 {/* Food items on grill */}
@@ -123,6 +106,5 @@ export const HeroSection = () => {
       <div className="absolute top-1/2 left-1/4 w-4 h-4 bg-orange-300 rounded-full animate-float animation-delay-1000 opacity-40 shadow-md"></div>
       <div className="absolute top-32 right-20 w-5 h-5 bg-red-400 rounded-full animate-float animation-delay-3000 opacity-45 shadow-md"></div>
       <div className="absolute bottom-40 left-32 w-7 h-7 bg-orange-500 rounded-full animate-float animation-delay-4000 opacity-50 shadow-lg"></div>
-    </section>
-  );
+    </section>;
 };
