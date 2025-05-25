@@ -366,10 +366,8 @@ const RestaurantMenu = () => {
           ]
         }
       ]
-    }
-  };
-
-      chickenWraps: {
+    },
+    chickenWraps: {
       title: "منيو الفراخ",
       titleEn: "CHICKEN WRAPS",
       items: [
@@ -390,7 +388,8 @@ const RestaurantMenu = () => {
           nameEn: "Burger Wrap Roll",
           price: "149",
           description: "قطعة لحم بقري صافي + بصل + فلفل ألوان  + مشروم + بسطرمة + سيدي   صوص"
-        }]
+        }
+      ]
     }
   };
 
@@ -401,7 +400,7 @@ const RestaurantMenu = () => {
     { key: 'sides', name: 'أصناف جانبية', nameEn: 'SIDES' },
     { key: 'chicken', name: 'السدق', nameEn: 'CHICKEN' },
     { key: 'meat', name: 'اللحم', nameEn: 'MEAT' },
-    { key: 'smashBurger', name: 'السماش برجر', nameEn: 'SMASH BURGER' }
+    { key: 'smashBurger', name: 'السماش برجر', nameEn: 'SMASH BURGER' },
     { key: 'chickenWraps', name: 'الفراخ', nameEn: 'CHICKEN WRAPS' }
   ];
 
