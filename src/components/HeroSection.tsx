@@ -1,12 +1,18 @@
+
 import { Button } from "@/components/ui/button";
+
 export const HeroSection = () => {
-  return <section id="home" className="relative bg-gradient-to-br from-red-800 via-red-900 to-black text-white py-24 overflow-hidden min-h-screen flex items-center">
+  return (
+    <section id="home" className="relative bg-gradient-to-br from-red-800 via-red-900 to-black text-white py-24 overflow-hidden min-h-screen flex items-center">
       {/* Brick Pattern Background */}
       <div className="absolute inset-0 opacity-20">
-        <div className="absolute inset-0" style={{
-        backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='20' viewBox='0 0 40 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Crect x='0' y='0' width='20' height='10'/%3E%3Crect x='20' y='10' width='20' height='10'/%3E%3C/g%3E%3C/svg%3E")`,
-        backgroundSize: '40px 20px'
-      }}></div>
+        <div 
+          className="absolute inset-0" 
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='20' viewBox='0 0 40 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Crect x='0' y='0' width='20' height='10'/%3E%3Crect x='20' y='10' width='20' height='10'/%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundSize: '40px 20px'
+          }}
+        ></div>
       </div>
 
       {/* Enhanced floating elements matching the reference */}
@@ -20,7 +26,7 @@ export const HeroSection = () => {
         <div className="flex flex-col lg:flex-row items-center justify-between">
           <div className="lg:w-1/2 text-center lg:text-right mb-12 lg:mb-0 transform hover:scale-105 transition-transform duration-500">
             <h1 className="text-6xl lg:text-8xl font-bold mb-8 leading-tight">
-              <span className="text-red-400 drop-shadow-2xl transform hover:scale-110 transition-transform duration-300 inline-block">سيدي</span>
+              <span className="text-red-400 drop-shadow-2xl transform hover:scale-110 transition-transform duration-300 inline-block">بيتزا</span>
               <br />
               <span className="text-white drop-shadow-xl transform hover:scale-110 transition-transform duration-300 inline-block">برجر</span>
             </h1>
@@ -29,10 +35,17 @@ export const HeroSection = () => {
               نقدم لك أفضل أنواع البرجر والبيتزا
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-end">
-              <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white px-12 py-6 text-xl font-bold rounded-full transition-all duration-500 transform hover:scale-110 hover:rotate-1 shadow-2xl hover:shadow-red-500/30 mx-[240px] my-[35px]">
+              <Button 
+                size="lg" 
+                className="bg-red-600 hover:bg-red-700 text-white px-12 py-6 text-xl font-bold rounded-full transition-all duration-500 transform hover:scale-110 hover:rotate-1 shadow-2xl hover:shadow-red-500/30"
+              >
                 تصفح القائمة
               </Button>
-              <Button size="lg" variant="outline" className="border-3 border-white text-white hover:bg-white hover:text-red-900 px-12 py-6 text-xl font-bold rounded-full transition-all duration-500 transform hover:scale-110 hover:-rotate-1 shadow-xl">
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-3 border-white text-white hover:bg-white hover:text-red-900 px-12 py-6 text-xl font-bold rounded-full transition-all duration-500 transform hover:scale-110 hover:-rotate-1 shadow-xl"
+              >
                 عن المطعم
               </Button>
             </div>
@@ -69,13 +82,8 @@ export const HeroSection = () => {
               </div>
               
               {/* Orbital rings */}
-              <div className="absolute inset-0 w-full h-full border-2 border-white/20 rounded-full animate-spin" style={{
-              animationDuration: '20s'
-            }}></div>
-              <div className="absolute inset-8 w-80 h-80 border border-red-300/30 rounded-full animate-spin" style={{
-              animationDuration: '15s',
-              animationDirection: 'reverse'
-            }}></div>
+              <div className="absolute inset-0 w-full h-full border-2 border-white/20 rounded-full animate-spin" style={{animationDuration: '20s'}}></div>
+              <div className="absolute inset-8 w-80 h-80 border border-red-300/30 rounded-full animate-spin" style={{animationDuration: '15s', animationDirection: 'reverse'}}></div>
             </div>
           </div>
         </div>
@@ -89,5 +97,6 @@ export const HeroSection = () => {
       {/* Additional floating elements for more depth */}
       <div className="absolute top-32 right-20 w-6 h-6 bg-gradient-to-br from-green-400 to-green-600 rounded-full animate-float animation-delay-3000 shadow-sm opacity-40"></div>
       <div className="absolute bottom-40 left-32 w-7 h-7 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full animate-float animation-delay-4000 shadow opacity-45"></div>
-    </section>;
+    </section>
+  );
 };
