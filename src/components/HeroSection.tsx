@@ -15,6 +15,15 @@ export const HeroSection = () => {
         ></div>
       </div>
 
+      {/* Logo positioned at top center */}
+      <div className="absolute top-8 left-1/2 transform -translate-x-1/2 z-20">
+        <img 
+          src="https://d.top4top.io/p_34321np181.png" 
+          alt="Restaurant Logo" 
+          className="w-32 h-32 object-contain animate-float drop-shadow-2xl hover:scale-110 transition-transform duration-300"
+        />
+      </div>
+
       {/* Floating decorative elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 left-20 w-16 h-16 bg-gradient-to-br from-orange-400 to-orange-600 rounded-lg transform rotate-45 animate-float opacity-40 shadow-2xl"></div>
@@ -25,7 +34,7 @@ export const HeroSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           {/* Left Content */}
-          <div className="lg:w-1/2 text-center lg:text-right space-y-8">
+          <div className="lg:w-1/2 text-center lg:text-right space-y-8 mt-16">
             <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
               <span className="block text-white mb-2 transform hover:scale-105 transition-transform duration-300">استمتع بوجباتنا</span>
               <span className="block text-orange-400 drop-shadow-2xl transform hover:scale-105 transition-transform duration-300">الشهية</span>
