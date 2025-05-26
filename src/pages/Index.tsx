@@ -126,31 +126,31 @@ const RestaurantMenu = () => {
       items: [
         {
           name: "كلاسيك سدق",
-          nameEn: "Classic Chicken",
+          nameEn: "Classic Sausage",
           price: "135",
           description: "سدق +  خس +  طماطم + بصل +  خيار مخلل + صوص جبنة + صوص  كلاسيك"
         },
         {
           name: "دراجون هيل سدق",
-          nameEn: "Dragon Hill Chicken",
+          nameEn: "Dragon Hill Sausage",
           price: "138",
           description: "سدق + خس + طماطم + بصل + خيار مخلل + هالبينو + اسبايسي صوص"
         },
         {
           name: "مشروم سدق",
-          nameEn: "Mushroom Chicken",
+          nameEn: "Mushroom Sausage",
           price: "140",
           description: "سدق + خس + طماطم + بصل + مشروم كريمي +خيار مخلل"
         },
         {
           name: "سكول أرت سدق",
-          nameEn: "Soul Art Chicken",
+          nameEn: "Soul Art Sausage",
           price: "155",
           description: "سدق + خس + طماطم + بصل + بسطرمة + بيكون + سيدي  صوص"
         },
         {
           name: "تريبول وي سدق",
-          nameEn: "Triple Way Chicken",
+          nameEn: "Triple Way Sausage",
           price: "140",
           description: "سدق + خس + طماطم + بصل مكرمل  + سيدي صوص"
         }
@@ -379,7 +379,7 @@ const RestaurantMenu = () => {
     { key: 'appetizers', name: 'الأضافات', nameEn: 'APPETIZERS' },
     { key: 'sauces', name: 'الصوصات', nameEn: 'SAUCES' },
     { key: 'sides', name: 'أصناف جانبية', nameEn: 'SIDES' },
-    { key: 'chicken', name: 'السدق', nameEn: 'CHICKEN' },
+    { key: 'chicken', name: 'السدق', nameEn: 'Sausage' },
     { key: 'meat', name: 'اللحم', nameEn: 'MEAT' },
     { key: 'smashBurger', name: 'السماش برجر', nameEn: 'SMASH BURGER' },
     { key: 'chickenWraps', name: 'الفراخ', nameEn: 'CHICKEN WRAPS' }
