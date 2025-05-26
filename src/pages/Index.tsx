@@ -122,7 +122,7 @@ const RestaurantMenu = () => {
     },
     chicken: {
       title: "منيو السدق",
-      titleEn: "CHICKEN MENU",
+      titleEn: "Sausage MENU",
       items: [
         {
           name: "كلاسيك سدق",
