@@ -14,7 +14,7 @@ const RestaurantMenu = () => {
         {
           name: "بيكون",
           nameEn: "Bacon",
-          price: "25",
+          price: "15",
         },
         {
           name: "سموك تركي",
@@ -24,17 +24,17 @@ const RestaurantMenu = () => {
         {
           name: "خيار مخلل",
           nameEn: "Pickled Cucumber",
-          price: "10",
+          price: "7",
         },
         {
           name: "مشروم",
           nameEn: "Mushroom",
-          price: "25",
+          price: "20",
         },
         {
           name: "هالبينو",
           nameEn: "Jalapeño",
-          price: "10",
+          price: "7",
         },
         {
           name: "صوص جبنة",
@@ -44,7 +44,7 @@ const RestaurantMenu = () => {
         {
           name: "بسطرمة",
           nameEn: "Pastrami",
-          price: "25",
+          price: "15",
         },
         {
           name: "قطعة برجر راقي",
@@ -75,17 +75,17 @@ const RestaurantMenu = () => {
         {
           name: "سيدي صوص",
           nameEn: "Sidi Sauce",
-          price: "25",
+          price: "15",
         },
         {
           name: "صوص جبنة",
           nameEn: "Cheese Sauce",
-          price: "25",
+          price: "15",
         },
         {
           name: "صوص أعشاب",
           nameEn: "Herb Sauce",
-          price: "20",
+          price: "15",
         }
       ]
     },
@@ -96,62 +96,62 @@ const RestaurantMenu = () => {
         {
           name: "عدد ٢ قطع ستربس",
           nameEn: "2 Pieces Strips",
-          price: "70",
+          price: "55",
         },
         {
           name: "تشيز ميل فرايز",
           nameEn: "Cheese Meal Fries",
-          price: "70",
+          price: "45",
         },
         {
           name: "سدق تشيز فرايز",
           nameEn: "Sidi Cheese Fries",
-          price: "80",
+          price: "55",
         },
         {
           name: "تشيز سيدي فرايز",
           nameEn: "Sidi Cheese Fries",
-          price: "95",
+          price: "65",
         },
         {
           name: "باكيت بطاطس",
           nameEn: "Fries Packet",
-          price: "30",
+          price: "25",
         }
       ]
     },
     chicken: {
       title: "منيو السدق",
-      titleEn: "Sausage MENU",
+      titleEn: "CHICKEN MENU",
       items: [
         {
           name: "كلاسيك سدق",
-          nameEn: "Classic Sausage",
-          price: "135",
+          nameEn: "Classic Chicken",
+          price: "95",
           description: "سدق +  خس +  طماطم + بصل +  خيار مخلل + صوص جبنة + صوص  كلاسيك"
         },
         {
           name: "دراجون هيل سدق",
-          nameEn: "Dragon Hill Sausage",
-          price: "138",
+          nameEn: "Dragon Hill Chicken",
+          price: "100",
           description: "سدق + خس + طماطم + بصل + خيار مخلل + هالبينو + اسبايسي صوص"
         },
         {
           name: "مشروم سدق",
-          nameEn: "Mushroom Sausage",
-          price: "140",
+          nameEn: "Mushroom Chicken",
+          price: "115",
           description: "سدق + خس + طماطم + بصل + مشروم كريمي +خيار مخلل"
         },
         {
           name: "سكول أرت سدق",
-          nameEn: "Soul Art Sausage",
-          price: "155",
+          nameEn: "Soul Art Chicken",
+          price: "130",
           description: "سدق + خس + طماطم + بصل + بسطرمة + بيكون + سيدي  صوص"
         },
         {
           name: "تريبول وي سدق",
-          nameEn: "Triple Way Sausage",
-          price: "140",
+          nameEn: "Triple Way Chicken",
+          price: "115",
           description: "سدق + خس + طماطم + بصل مكرمل  + سيدي صوص"
         }
       ]
@@ -203,31 +203,31 @@ const RestaurantMenu = () => {
             {
               name: "كلاسيك تشيز بيف + بطاطس",
               nameEn: "Classic Cheese Beef + Fries",
-              price: "159",
+              price: "129",
               description: "قطعة لحم بقري صافي + خس + طماطم + بصل + خيار مخلل + صوص جبنة + صوص كلاسيك + بطاطس"
             },
             {
               name: "دراجون هيل + بطاطس",
               nameEn: "Dragon Hill + Fries",
-              price: "159",
+              price: "129",
               description: "قطعة لحم بقري صافي + خس + طماطم + بصل + خيار مخلل + هالبينو + اسبايسي صوص + بطاطس"
             },
             {
               name: "مشروم برجر + بطاطس",
               nameEn: "Mushroom Burger + Fries",
-              price: "165",
+              price: "135",
               description: "قطعة لحم بقري صافي + خس + طماطم + بصل + مشروم كريمي + خيار مخلل + بطاطس"
             },
             {
               name: "سكول أرت + بطاطس",
               nameEn: "School Art + Fries",
-              price: "179",
+              price: "149",
               description: "قطعة لحم بقري صافي + خس + طماطم + بصل + بسطرمة + بيكون + سيدي صوص + بطاطس"
             },
             {
               name: "تريبل وي + بطاطس",
               nameEn: "Triple Way + Fries",
-              price: "165",
+              price: "135",
               description: "قطعة لحم بقري صافي + خس + طماطم + بصل مكرمل + سيدي صوص + بطاطس"
             }
           ]
@@ -265,12 +265,6 @@ const RestaurantMenu = () => {
               nameEn: "School Art",
               price: "120",
               description: "قطعة لحم بقري صافي + خس + طماطم + بصل + بسطرمة + بيكون + سيدي صوص"
-            },
-            {
-              name: "تريبل وي",
-              nameEn: "Triple Way",
-              price: "115",
-              description: "قطعة لحم بقري صافي + خس + طماطم + بصل مكرمل + سيدي صوص"
             }
           ]
         },
@@ -281,32 +275,26 @@ const RestaurantMenu = () => {
             {
               name: "دبل سماش كلاسيك + بطاطس",
               nameEn: "Double Smash Classic + Fries",
-              price: "145",
+              price: "129",
               description: "قطعتين لحم بقري صافي + خس + طماطم + خيار مخلل + صوص جبنة + بطاطس مقلية"
             },
             {
               name: "دبل دراجون هيل + بطاطس",
               nameEn: "Double Dragon Hill + Fries",
-              price: "155",
+              price: "129",
               description: "قطعتين لحم بقري صافي + خس + طماطم + بصل + خيار مخلل + هالبينو + صوص سبايسي + بطاطس مقلية"
             },
             {
               name: "دبل مشروم برجر + بطاطس",
               nameEn: "Double Mushroom Burger + Fries",
-              price: "165",
+              price: "135",
               description: "قطعتين لحم بقري صافي + خس + طماطم + بصل + مشروم كريمي + خيار مخلل + بطاطس مقلية"
             },
             {
               name: "دبل سكول أرت + بطاطس",
               nameEn: "Double School Art + Fries",
-              price: "175",
+              price: "149",
               description: "قطعتين لحم بقري صافي + خس + طماطم + بصل + بسطرمة + بيكون + سيدي صوص + بطاطس مقلية"
-            },
-            {
-              name: "دبل تريبل وي + بطاطس",
-              nameEn: "Double Triple Way + Fries",
-              price: "165",
-              description: "قطعتين لحم بقري صافي + خس + طماطم + بصل مكرمل + سيدي صوص + بطاطس مقلية"
             }
           ]
         },
@@ -317,32 +305,26 @@ const RestaurantMenu = () => {
             {
               name: "تريبل سماش كلاسيك + بطاطس",
               nameEn: "Triple Smash Classic + Fries",
-              price: "165",
+              price: "149",
               description: "ثلاث قطع لحم بقري صافي + خس + طماطم + خيار مخلل + صوص جبنة + بطاطس مقلية"
             },
             {
               name: "تريبل دراجون هيل + بطاطس",
               nameEn: "Triple Dragon Hill + Fries",
-              price: "175",
+              price: "149",
               description: "ثلاث قطع لحم بقري صافي + خس + طماطم + بصل + خيار مخلل + هالبينو + صوص سبايسي + بطاطس مقلية"
             },
             {
               name: "تريبل مشروم برجر + بطاطس",
               nameEn: "Triple Mushroom Burger + Fries",
-              price: "185",
+              price: "169",
               description: "ثلاث قطع لحم بقري صافي + خس + طماطم + بصل + مشروم كريمي + خيار مخلل + بطاطس مقلية"
             },
             {
               name: "تريبل سكول أرت + بطاطس",
               nameEn: "Triple School Art + Fries",
-              price: "195",
+              price: "179",
               description: "ثلاث قطع لحم بقري صافي + خس + طماطم + بصل + بسطرمة + بيكون + سيدي صوص + بطاطس مقلية"
-            },
-            {
-              name: "تريبل تريبل وي + بطاطس",
-              nameEn: "Triple Triple Way + Fries",
-              price: "185",
-              description: "ثلاث قطع لحم بقري صافي + خس + طماطم + بصل مكرمل + سيدي صوص + بطاطس مقلية"
             }
           ]
         }
@@ -353,22 +335,28 @@ const RestaurantMenu = () => {
       titleEn: "CHICKEN WRAPS",
       items: [
         {
-          name: "تشيز ن راب رول",
-          nameEn: "Cheese Wrap Roll",
-          price: "125",
-          description: "صدر فراخ مشوي قطع + بصل + فلفل ألوان + مشروم + بسطرمة + صوص أعشاب "
-        },
-        {
-          name: "كور راب تشيزكن",
-          nameEn: "Core Wrap Chicken",
+          name: "كانتــــــري تشـيكن",
+          nameEn: "Chicken",
           price: "120",
-          description: "استربس مقلي  + صوص اسبايسي + هالبينو +  صوص  جبنة"
+          description: "صدر دجاج كرسبي + بسطرمة + سموك تركي  + خس + طماطم + صوص +  صوص كلاسيك "
         },
         {
-          name: "برجر راب رول",
-          nameEn: "Burger Wrap Roll",
-          price: "149",
-          description: "قطعة لحم بقري صافي + بصل + فلفل ألوان  + مشروم + بسطرمة + سيدي   صوص"
+          name: "جــــــريلد تشـــكين",
+          nameEn: "Gerald Chicken",
+          price: "125",
+          description: "صدر دجاج مشوي + بيف بييكون + بسطرمة + فلفل ألوان + طماطم + زيتون +  مشروم + بصل مكرمل "
+        },
+        {
+          name: "كـــــور راب تشــكين",
+          nameEn: "KOR RAP Chicken",
+          price: "120",
+          description: "صدر دجاج كرسبي + بسطرمة + سموك تركي  + خس + طماطم + صوص +  صوص كلاسيك "
+        },
+        {
+          name: "تشـــــكن راب رول",
+          nameEn: "Chicken Wrap Roll",
+          price: "129",
+          description: "صدر دجاج مشوي + بيف بييكون + بسطرمة + فلفل ألوان + زيتون +  مشروم + بصل مكرمل "
         }
       ]
     }
@@ -379,7 +367,7 @@ const RestaurantMenu = () => {
     { key: 'appetizers', name: 'الأضافات', nameEn: 'APPETIZERS' },
     { key: 'sauces', name: 'الصوصات', nameEn: 'SAUCES' },
     { key: 'sides', name: 'أصناف جانبية', nameEn: 'SIDES' },
-    { key: 'chicken', name: 'السدق', nameEn: 'Sausage' },
+    { key: 'chicken', name: 'السدق', nameEn: 'CHICKEN' },
     { key: 'meat', name: 'اللحم', nameEn: 'MEAT' },
     { key: 'smashBurger', name: 'السماش برجر', nameEn: 'SMASH BURGER' },
     { key: 'chickenWraps', name: 'الفراخ', nameEn: 'CHICKEN WRAPS' }
