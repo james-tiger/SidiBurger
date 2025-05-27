@@ -120,9 +120,9 @@ const RestaurantMenu = () => {
         }
       ]
     },
-    Sausage: {
+    SAUSAGE: {
       title: "منيو السدق",
-      titleEn: "Sausage MENU",
+      titleEn: "SAUSAGE MENU",
       items: [
         {
           name: "كلاسيك سدق",
@@ -367,7 +367,7 @@ const RestaurantMenu = () => {
     { key: 'appetizers', name: 'الأضافات', nameEn: 'APPETIZERS' },
     { key: 'sauces', name: 'الصوصات', nameEn: 'SAUCES' },
     { key: 'sides', name: 'أصناف جانبية', nameEn: 'SIDES' },
-    { key: 'Sausage', name: 'السدق', nameEn: 'Sausage' },
+    { key: 'SAUSAGE', name: 'السدق', nameEn: 'SAUSAGE' },
     { key: 'meat', name: 'اللحم', nameEn: 'MEAT' },
     { key: 'smashBurger', name: 'السماش برجر', nameEn: 'SMASH BURGER' },
     { key: 'chickenWraps', name: 'الفراخ', nameEn: 'CHICKEN WRAPS' }
