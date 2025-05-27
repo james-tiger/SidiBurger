@@ -120,7 +120,7 @@ const RestaurantMenu = () => {
         }
       ]
     },
-    chicken: {
+    Sausage: {
       title: "منيو السدق",
       titleEn: "Sausage MENU",
       items: [
