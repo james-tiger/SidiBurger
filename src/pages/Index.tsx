@@ -52,7 +52,7 @@ const RestaurantMenu = () => {
           price: "35",
         },
         {
-          name: "قطعة برجر متشبك",
+          name: "قطعة برجر هتشبعك",
           nameEn: "Linked Burger Patty",
           price: "65",
         }
@@ -364,13 +364,13 @@ const RestaurantMenu = () => {
 
   const categories = [
     { key: 'all', name: 'الكل', nameEn: 'ALL' },
-    { key: 'appetizers', name: 'الأضافات', nameEn: 'APPETIZERS' },
-    { key: 'sauces', name: 'الصوصات', nameEn: 'SAUCES' },
-    { key: 'sides', name: 'أصناف جانبية', nameEn: 'SIDES' },
-    { key: 'SAUSAGE', name: 'السدق', nameEn: 'SAUSAGE' },
     { key: 'meat', name: 'اللحم', nameEn: 'MEAT' },
     { key: 'smashBurger', name: 'السماش برجر', nameEn: 'SMASH BURGER' },
-    { key: 'chickenWraps', name: 'الفراخ', nameEn: 'CHICKEN WRAPS' }
+    { key: 'SAUSAGE', name: 'السدق', nameEn: 'SAUSAGE' },
+    { key: 'chickenWraps', name: 'الفراخ', nameEn: 'CHICKEN WRAPS' },
+    { key: 'appetizers', name: 'الأضافات', nameEn: 'APPETIZERS' },
+    { key: 'sauces', name: 'الصوصات', nameEn: 'SAUCES' },
+    { key: 'sides', name: 'أصناف جانبية', nameEn: 'SIDES' }
   ];
 
   const getFilteredItems = () => {
