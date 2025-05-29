@@ -47,7 +47,7 @@ const RestaurantMenu = () => {
           price: "15",
         },
         {
-          name: "قطعة برجر راقي",
+          name: "قطعة برجر رايق",
           nameEn: "Premium Burger Patty",
           price: "35",
         },
@@ -68,7 +68,7 @@ const RestaurantMenu = () => {
           price: "15",
         },
         {
-          name: "إسباني صوص",
+          name: "اسبايسي صوص",
           nameEn: "Spanish Sauce",
           price: "15",
         },
@@ -94,12 +94,12 @@ const RestaurantMenu = () => {
       titleEn: "SIDES",
       items: [
         {
-          name: "عدد ٢ قطع ستربس",
-          nameEn: "2 Pieces Strips",
+          name: "عدد ٣ قطع ستربس",
+          nameEn: "3 Pieces Strips",
           price: "55",
         },
         {
-          name: "تشيز ميل فرايز",
+          name: "تشيز هيل فرايز",
           nameEn: "Cheese Meal Fries",
           price: "45",
         },
