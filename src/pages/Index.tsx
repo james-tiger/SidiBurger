@@ -649,7 +649,7 @@ const RestaurantMenu = () => {
         </div>
       </footer>
 
-      <style jsx>{`
+      <style>{`
         @keyframes fadeInUp {
           from {
             opacity: 0;
