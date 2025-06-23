@@ -6,6 +6,73 @@ const RestaurantMenu = () => {
   const [activeCategory, setActiveCategory] = useState('all');
   const [animatedItems, setAnimatedItems] = useState([]);
 
+  // Image paths for each menu item
+  const itemImages = {
+    appetizers: {
+      "Bacon": "/src/images/appetizers/bacon.jpg",
+      "Smoked Turkey": "/src/images/appetizers/smoked-turkey.jpg",
+      "Pickled Cucumber": "/src/images/appetizers/pickles.jpg",
+      "Mushroom": "/src/images/appetizers/mushroom.jpg",
+      "Jalapeño": "/src/images/appetizers/jalapeno.jpg",
+      "Cheese Sauce": "/src/images/appetizers/cheese-sauce.jpg",
+      "Pastrami": "/src/images/appetizers/pastrami.jpg",
+      "Premium Burger Patty": "/src/images/appetizers/premium-patty.jpg",
+      "Linked Burger Patty": "/src/images/appetizers/linked-patty.jpg"
+    },
+    sauces: {
+      "Classic Sauce": "/src/images/sauces/classic.jpg",
+      "Spanish Sauce": "/src/images/sauces/spanish.jpg",
+      "Sidi Sauce": "/src/images/sauces/sidi.jpg",
+      "Cheese Sauce": "/src/images/sauces/cheese.jpg",
+      "Herb Sauce": "/src/images/sauces/herb.jpg"
+    },
+    sides: {
+      "3 Pieces Strips": "/src/images/sides/strips.jpg",
+      "Cheese Meal Fries": "/src/images/sides/cheese-fries.jpg",
+      "Sidi Cheese Fries": "/src/images/sides/sidi-fries.jpg",
+      "Fries Packet": "/src/images/sides/fries.jpg"
+    },
+    SAUSAGE: {
+      "Classic Sausage": "/src/images/sausage/classic.jpg",
+      "Dragon Hill Sausage": "/src/images/sausage/dragon.jpg",
+      "Mushroom Sausage": "/src/images/sausage/muashrom.jpg",
+      "Soul Art Sausage": "/src/images/sausage/school.jpg",
+      "Triple Way Sausage": "/src/images/sausage/tripale.jpg"
+    },
+    meat: {
+      "Classic Cheese Beef": "/src/images/meat/classic_meet.jpg",
+      "Dragon Hill": "/src/images/meat/dragon_hill_meet.jpg",
+      "Mushroom Burger": "/src/images/meat/musharom_meet.jpg",
+      "School Art": "/src/images/meat/school_art_meet.jpg",
+      "Triple Way": "/src/images/meat/triple_we_meet.jpg",
+      "Classic Cheese Beef + Fries": "/src/images/meat/classic_meet.jpg",
+      "Dragon Hill + Fries": "/src/images/meat/dragon_hill_meet.jpg",
+      "Mushroom Burger + Fries": "/src/images/meat/musharom_meet.jpg",
+      "School Art + Fries": "/src/images/meat/school_art_meet.jpg",
+      "Triple Way + Fries": "/src/images/meat/triple_we_meet.jpg"
+    },
+    smashBurger: {
+      "Smash Classic": "/src/images/smash/single-classic.jpg",
+      "Dragon Hill": "/src/images/smash/single-dragon.jpg",
+      "Mushroom Burger": "/src/images/smash/single-mushroom.jpg",
+      "School Art": "/src/images/smash/single-school-art.jpg",
+      "Double Smash Classic + Fries": "/src/images/smash/double-classic.jpg",
+      "Double Dragon Hill + Fries": "/src/images/smash/double-dragon.jpg",
+      "Double Mushroom Burger + Fries": "/src/images/smash/double-mushroom.jpg",
+      "Double School Art + Fries": "/src/images/smash/double-school-art.jpg",
+      "Triple Smash Classic + Fries": "/src/images/smash/triple-classic.jpg",
+      "Triple Dragon Hill + Fries": "/src/images/smash/triple-dragon.jpg",
+      "Triple Mushroom Burger + Fries": "/src/images/smash/triple-mushroom.jpg",
+      "Triple School Art + Fries": "/src/images/smash/triple-school-art.jpg"
+    },
+    chickenWraps: {
+      "Chicken": "/src/images/chicken/country.jpg",
+      "Gerald Chicken": "/src/images/chicken/gerald.jpg",
+      "KOR RAP Chicken": "/src/images/chicken/kor-rap.jpg",
+      "Chicken Wrap Roll": "/src/images/chicken/wrap-roll.jpg"
+    }
+  };
+
   const menuData = {
     appetizers: {
       title: "الأضافات",
@@ -15,46 +82,55 @@ const RestaurantMenu = () => {
           name: "بيكون",
           nameEn: "Bacon",
           price: "15",
+          image: itemImages.appetizers["Bacon"]
         },
         {
           name: "سموك تركي",
           nameEn: "Smoked Turkey",
           price: "15",
+          image: itemImages.appetizers["Smoked Turkey"]
         },
         {
           name: "خيار مخلل",
           nameEn: "Pickled Cucumber",
           price: "7",
+          image: itemImages.appetizers["Pickled Cucumber"]
         },
         {
           name: "مشروم",
           nameEn: "Mushroom",
           price: "20",
+          image: itemImages.appetizers["Mushroom"]
         },
         {
           name: "هالبينو",
           nameEn: "Jalapeño",
           price: "7",
+          image: itemImages.appetizers["Jalapeño"]
         },
         {
           name: "صوص جبنة",
           nameEn: "Cheese Sauce",
           price: "15",
+          image: itemImages.appetizers["Cheese Sauce"]
         },
         {
           name: "بسطرمة",
           nameEn: "Pastrami",
           price: "15",
+          image: itemImages.appetizers["Pastrami"]
         },
         {
           name: "قطعة برجر رايق",
           nameEn: "Premium Burger Patty",
           price: "35",
+          image: itemImages.appetizers["Premium Burger Patty"]
         },
         {
           name: "قطعة برجر هتشبعك",
           nameEn: "Linked Burger Patty",
           price: "65",
+          image: itemImages.appetizers["Linked Burger Patty"]
         }
       ]
     },
@@ -66,26 +142,31 @@ const RestaurantMenu = () => {
           name: "كلاسيك صوص",
           nameEn: "Classic Sauce",
           price: "15",
+          image: itemImages.sauces["Classic Sauce"]
         },
         {
           name: "اسبايسي صوص",
           nameEn: "Spanish Sauce",
           price: "15",
+          image: itemImages.sauces["Spanish Sauce"]
         },
         {
           name: "سيدي صوص",
           nameEn: "Sidi Sauce",
           price: "15",
+          image: itemImages.sauces["Sidi Sauce"]
         },
         {
           name: "صوص جبنة",
           nameEn: "Cheese Sauce",
           price: "15",
+          image: itemImages.sauces["Cheese Sauce"]
         },
         {
           name: "صوص أعشاب",
           nameEn: "Herb Sauce",
           price: "15",
+          image: itemImages.sauces["Herb Sauce"]
         }
       ]
     },
@@ -97,26 +178,31 @@ const RestaurantMenu = () => {
           name: "عدد ٣ قطع ستربس",
           nameEn: "3 Pieces Strips",
           price: "55",
+          image: itemImages.sides["3 Pieces Strips"]
         },
         {
           name: "تشيز هيل فرايز",
           nameEn: "Cheese Meal Fries",
           price: "45",
+          image: itemImages.sides["Cheese Meal Fries"]
         },
         {
           name: "سدق تشيز فرايز",
           nameEn: "Sidi Cheese Fries",
           price: "55",
+          image: itemImages.sides["Sidi Cheese Fries"]
         },
         {
           name: "تشيز سيدي فرايز",
           nameEn: "Sidi Cheese Fries",
           price: "65",
+          image: itemImages.sides["Sidi Cheese Fries"]
         },
         {
           name: "باكيت بطاطس",
           nameEn: "Fries Packet",
           price: "25",
+          image: itemImages.sides["Fries Packet"]
         }
       ]
     },
@@ -128,31 +214,36 @@ const RestaurantMenu = () => {
           name: "كلاسيك سدق",
           nameEn: "Classic Sausage",
           price: "95",
-          description: "سدق +  خس +  طماطم + بصل +  خيار مخلل + صوص جبنة + صوص  كلاسيك"
+          description: "سدق +  خس +  طماطم + بصل +  خيار مخلل + صوص جبنة + صوص  كلاسيك",
+          image: itemImages.SAUSAGE["Classic Sausage"]
         },
         {
           name: "دراجون هيل سدق",
           nameEn: "Dragon Hill Sausage",
           price: "100",
-          description: "سدق + خس + طماطم + بصل + خيار مخلل + هالبينو + اسبايسي صوص"
+          description: "سدق + خس + طماطم + بصل + خيار مخلل + هالبينو + اسبايسي صوص",
+          image: itemImages.SAUSAGE["Dragon Hill Sausage"]
         },
         {
           name: "مشروم سدق",
           nameEn: "Mushroom Sausage",
           price: "115",
-          description: "سدق + خس + طماطم + بصل + مشروم كريمي +خيار مخلل"
+          description: "سدق + خس + طماطم + بصل + مشروم كريمي +خيار مخلل",
+          image: itemImages.SAUSAGE["Mushroom Sausage"]
         },
         {
           name: "سكول أرت سدق",
           nameEn: "Soul Art Sausage",
           price: "130",
-          description: "سدق + خس + طماطم + بصل + بسطرمة + بيكون + سيدي  صوص"
+          description: "سدق + خس + طماطم + بصل + بسطرمة + بيكون + سيدي  صوص",
+          image: itemImages.SAUSAGE["Soul Art Sausage"]
         },
         {
           name: "تريبول وي سدق",
           nameEn: "Triple Way Sausage",
           price: "115",
-          description: "سدق + خس + طماطم + بصل مكرمل  + سيدي صوص"
+          description: "سدق + خس + طماطم + بصل مكرمل  + سيدي صوص",
+          image: itemImages.SAUSAGE["Triple Way Sausage"]
         }
       ]
     },
@@ -168,31 +259,36 @@ const RestaurantMenu = () => {
               name: "كلاسيك تشيز بيف",
               nameEn: "Classic Cheese Beef",
               price: "95",
-              description: "قطعة لحم بقري صافي + خس + طماطم + بصل + خيار مخلل + صوص جبنة + صوص كلاسيك"
+              description: "قطعة لحم بقري صافي + خس + طماطم + بصل + خيار مخلل + صوص جبنة + صوص كلاسيك",
+              image: itemImages.meat["Classic Cheese Beef"]
             },
             {
               name: "دراجون هيل",
               nameEn: "Dragon Hill",
               price: "100",
-              description: "قطعة لحم بقري صافي + خس + طماطم + بصل + خيار مخلل + هالبينو + اسبايسي صوص"
+              description: "قطعة لحم بقري صافي + خس + طماطم + بصل + خيار مخلل + هالبينو + اسبايسي صوص",
+              image: itemImages.meat["Dragon Hill"]
             },
             {
               name: "مشروم برجر",
               nameEn: "Mushroom Burger",
               price: "115",
-              description: "قطعة لحم بقري صافي + خس + طماطم + بصل + مشروم كريمي + خيار مخلل"
+              description: "قطعة لحم بقري صافي + خس + طماطم + بصل + مشروم كريمي + خيار مخلل",
+              image: itemImages.meat["Mushroom Burger"]
             },
             {
               name: "سكول أرت",
               nameEn: "School Art",
               price: "130",
-              description: "قطعة لحم بقري صافي + خس + طماطم + بصل + بسطرمة + بيكون + سيدي صوص"
+              description: "قطعة لحم بقري صافي + خس + طماطم + بصل + بسطرمة + بيكون + سيدي صوص",
+              image: itemImages.meat["School Art"]
             },
             {
               name: "تريبل وي",
               nameEn: "Triple Way",
               price: "115",
-              description: "قطعة لحم بقري صافي + خس + طماطم + بصل مكرمل + سيدي صوص"
+              description: "قطعة لحم بقري صافي + خس + طماطم + بصل مكرمل + سيدي صوص",
+              image: itemImages.meat["Triple Way"]
             }
           ]
         },
@@ -204,31 +300,36 @@ const RestaurantMenu = () => {
               name: "كلاسيك تشيز بيف + بطاطس",
               nameEn: "Classic Cheese Beef + Fries",
               price: "129",
-              description: "قطعة لحم بقري صافي + خس + طماطم + بصل + خيار مخلل + صوص جبنة + صوص كلاسيك + بطاطس"
+              description: "قطعة لحم بقري صافي + خس + طماطم + بصل + خيار مخلل + صوص جبنة + صوص كلاسيك + بطاطس",
+              image: itemImages.meat["Classic Cheese Beef + Fries"]
             },
             {
               name: "دراجون هيل + بطاطس",
               nameEn: "Dragon Hill + Fries",
               price: "129",
-              description: "قطعة لحم بقري صافي + خس + طماطم + بصل + خيار مخلل + هالبينو + اسبايسي صوص + بطاطس"
+              description: "قطعة لحم بقري صافي + خس + طماطم + بصل + خيار مخلل + هالبينو + اسبايسي صوص + بطاطس",
+              image: itemImages.meat["Dragon Hill + Fries"]
             },
             {
               name: "مشروم برجر + بطاطس",
               nameEn: "Mushroom Burger + Fries",
               price: "135",
-              description: "قطعة لحم بقري صافي + خس + طماطم + بصل + مشروم كريمي + خيار مخلل + بطاطس"
+              description: "قطعة لحم بقري صافي + خس + طماطم + بصل + مشروم كريمي + خيار مخلل + بطاطس",
+              image: itemImages.meat["Mushroom Burger + Fries"]
             },
             {
               name: "سكول أرت + بطاطس",
               nameEn: "School Art + Fries",
               price: "149",
-              description: "قطعة لحم بقري صافي + خس + طماطم + بصل + بسطرمة + بيكون + سيدي صوص + بطاطس"
+              description: "قطعة لحم بقري صافي + خس + طماطم + بصل + بسطرمة + بيكون + سيدي صوص + بطاطس",
+              image: itemImages.meat["School Art + Fries"]
             },
             {
               name: "تريبل وي + بطاطس",
               nameEn: "Triple Way + Fries",
               price: "135",
-              description: "قطعة لحم بقري صافي + خس + طماطم + بصل مكرمل + سيدي صوص + بطاطس"
+              description: "قطعة لحم بقري صافي + خس + طماطم + بصل مكرمل + سيدي صوص + بطاطس",
+              image: itemImages.meat["Triple Way + Fries"]
             }
           ]
         }
@@ -246,25 +347,29 @@ const RestaurantMenu = () => {
               name: "سماش كلاسيك",
               nameEn: "Smash Classic",
               price: "90",
-              description: "قطعة لحم بقري صافي + خس + طماطم + خيار مخلل + صوص جبنة"
+              description: "قطعة لحم بقري صافي + خس + طماطم + خيار مخلل + صوص جبنة",
+              image: itemImages.smashBurger["Smash Classic"]
             },
             {
               name: "دراجون هيل",
               nameEn: "Dragon Hill",
               price: "100",
-              description: "قطعة لحم بقري صافي + خس + طماطم + بصل + خيار مخلل + هالبينو + صوص سبايسي"
+              description: "قطعة لحم بقري صافي + خس + طماطم + بصل + خيار مخلل + هالبينو + صوص سبايسي",
+              image: itemImages.smashBurger["Dragon Hill"]
             },
             {
               name: "مشروم برجر",
               nameEn: "Mushroom Burger",
               price: "115",
-              description: "قطعة لحم بقري صافي + خس + طماطم + بصل + مشروم كريمي + خيار مخلل"
+              description: "قطعة لحم بقري صافي + خس + طماطم + بصل + مشروم كريمي + خيار مخلل",
+              image: itemImages.smashBurger["Mushroom Burger"]
             },
             {
               name: "سكول أرت",
               nameEn: "School Art",
               price: "120",
-              description: "قطعة لحم بقري صافي + خس + طماطم + بصل + بسطرمة + بيكون + سيدي صوص"
+              description: "قطعة لحم بقري صافي + خس + طماطم + بصل + بسطرمة + بيكون + سيدي صوص",
+              image: itemImages.smashBurger["School Art"]
             }
           ]
         },
@@ -276,25 +381,29 @@ const RestaurantMenu = () => {
               name: "دبل سماش كلاسيك + بطاطس",
               nameEn: "Double Smash Classic + Fries",
               price: "129",
-              description: "قطعتين لحم بقري صافي + خس + طماطم + خيار مخلل + صوص جبنة + بطاطس مقلية"
+              description: "قطعتين لحم بقري صافي + خس + طماطم + خيار مخلل + صوص جبنة + بطاطس مقلية",
+              image: itemImages.smashBurger["Double Smash Classic + Fries"]
             },
             {
               name: "دبل دراجون هيل + بطاطس",
               nameEn: "Double Dragon Hill + Fries",
               price: "129",
-              description: "قطعتين لحم بقري صافي + خس + طماطم + بصل + خيار مخلل + هالبينو + صوص سبايسي + بطاطس مقلية"
+              description: "قطعتين لحم بقري صافي + خس + طماطم + بصل + خيار مخلل + هالبينو + صوص سبايسي + بطاطس مقلية",
+              image: itemImages.smashBurger["Double Dragon Hill + Fries"]
             },
             {
               name: "دبل مشروم برجر + بطاطس",
               nameEn: "Double Mushroom Burger + Fries",
               price: "135",
-              description: "قطعتين لحم بقري صافي + خس + طماطم + بصل + مشروم كريمي + خيار مخلل + بطاطس مقلية"
+              description: "قطعتين لحم بقري صافي + خس + طماطم + بصل + مشروم كريمي + خيار مخلل + بطاطس مقلية",
+              image: itemImages.smashBurger["Double Mushroom Burger + Fries"]
             },
             {
               name: "دبل سكول أرت + بطاطس",
               nameEn: "Double School Art + Fries",
               price: "149",
-              description: "قطعتين لحم بقري صافي + خس + طماطم + بصل + بسطرمة + بيكون + سيدي صوص + بطاطس مقلية"
+              description: "قطعتين لحم بقري صافي + خس + طماطم + بصل + بسطرمة + بيكون + سيدي صوص + بطاطس مقلية",
+              image: itemImages.smashBurger["Double School Art + Fries"]
             }
           ]
         },
@@ -306,25 +415,29 @@ const RestaurantMenu = () => {
               name: "تريبل سماش كلاسيك + بطاطس",
               nameEn: "Triple Smash Classic + Fries",
               price: "149",
-              description: "ثلاث قطع لحم بقري صافي + خس + طماطم + خيار مخلل + صوص جبنة + بطاطس مقلية"
+              description: "ثلاث قطع لحم بقري صافي + خس + طماطم + خيار مخلل + صوص جبنة + بطاطس مقلية",
+              image: itemImages.smashBurger["Triple Smash Classic + Fries"]
             },
             {
               name: "تريبل دراجون هيل + بطاطس",
               nameEn: "Triple Dragon Hill + Fries",
               price: "149",
-              description: "ثلاث قطع لحم بقري صافي + خس + طماطم + بصل + خيار مخلل + هالبينو + صوص سبايسي + بطاطس مقلية"
+              description: "ثلاث قطع لحم بقري صافي + خس + طماطم + بصل + خيار مخلل + هالبينو + صوص سبايسي + بطاطس مقلية",
+              image: itemImages.smashBurger["Triple Dragon Hill + Fries"]
             },
             {
               name: "تريبل مشروم برجر + بطاطس",
               nameEn: "Triple Mushroom Burger + Fries",
               price: "169",
-              description: "ثلاث قطع لحم بقري صافي + خس + طماطم + بصل + مشروم كريمي + خيار مخلل + بطاطس مقلية"
+              description: "ثلاث قطع لحم بقري صافي + خس + طماطم + بصل + مشروم كريمي + خيار مخلل + بطاطس مقلية",
+              image: itemImages.smashBurger["Triple Mushroom Burger + Fries"]
             },
             {
               name: "تريبل سكول أرت + بطاطس",
               nameEn: "Triple School Art + Fries",
               price: "179",
-              description: "ثلاث قطع لحم بقري صافي + خس + طماطم + بصل + بسطرمة + بيكون + سيدي صوص + بطاطس مقلية"
+              description: "ثلاث قطع لحم بقري صافي + خس + طماطم + بصل + بسطرمة + بيكون + سيدي صوص + بطاطس مقلية",
+              image: itemImages.smashBurger["Triple School Art + Fries"]
             }
           ]
         }
@@ -338,25 +451,29 @@ const RestaurantMenu = () => {
           name: "كانتــــــري تشـيكن",
           nameEn: "Chicken",
           price: "120",
-          description: "صدر دجاج كرسبي + بسطرمة + سموك تركي  + خس + طماطم + صوص +  صوص كلاسيك "
+          description: "صدر دجاج كرسبي + بسطرمة + سموك تركي  + خس + طماطم + صوص +  صوص كلاسيك ",
+          image: itemImages.chickenWraps["Chicken"]
         },
         {
           name: "جــــــريلد تشـــكين",
           nameEn: "Gerald Chicken",
           price: "125",
-          description: "صدر دجاج مشوي + بيف بييكون + بسطرمة + فلفل ألوان + طماطم + زيتون +  مشروم + بصل مكرمل "
+          description: "صدر دجاج مشوي + بيف بييكون + بسطرمة + فلفل ألوان + طماطم + زيتون +  مشروم + بصل مكرمل ",
+          image: itemImages.chickenWraps["Gerald Chicken"]
         },
         {
           name: "كـــــور راب تشــكين",
           nameEn: "KOR RAP Chicken",
           price: "120",
-          description: "صدر دجاج كرسبي + بسطرمة + سموك تركي  + خس + طماطم + صوص +  صوص كلاسيك "
+          description: "صدر دجاج كرسبي + بسطرمة + سموك تركي  + خس + طماطم + صوص +  صوص كلاسيك ",
+          image: itemImages.chickenWraps["KOR RAP Chicken"]
         },
         {
           name: "تشـــــكن راب رول",
           nameEn: "Chicken Wrap Roll",
           price: "129",
-          description: "صدر دجاج مشوي + بيف بييكون + بسطرمة + فلفل ألوان + زيتون +  مشروم + بصل مكرمل "
+          description: "صدر دجاج مشوي + بيف بييكون + بسطرمة + فلفل ألوان + زيتون +  مشروم + بصل مكرمل ",
+          image: itemImages.chickenWraps["Chicken Wrap Roll"]
         }
       ]
     }
@@ -579,46 +696,60 @@ const RestaurantMenu = () => {
                     animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both`
                   }}
                 >
-                  <div className="flex justify-between items-start">
+                  <div className="flex flex-col md:flex-row gap-6">
+                    {/* Image Section */}
+                    <div className="w-full md:w-1/3 h-48 md:h-auto rounded-xl overflow-hidden">
+                      <img 
+                        src={item.image} 
+                        alt={item.nameEn}
+                        className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"
+                      />
+                    </div>
+                    
+                    {/* Content Section */}
                     <div className="flex-1">
-                      <div className="flex items-center gap-4 mb-3">
-                        <h3 className="text-xl md:text-2xl font-bold text-white">
-                          {item.name}
-                        </h3>
-                        <span className="text-sm text-gray-400 uppercase tracking-wider">
-                          {item.nameEn}
-                        </span>
-                      </div>
-                      <p className="text-gray-300 text-sm md:text-base leading-relaxed mb-4">
-                        {item.description}
-                      </p>
-                      {item.subCategory && (
-                        <span className="inline-block bg-red-500/20 text-red-400 px-3 py-1 rounded-full text-xs">
-                          {item.subCategory}
-                        </span>
-                      )}
-                    </div>
-                    <div className="text-left ml-6">
-                      <div className="text-2xl md:text-3xl font-bold text-red-500">
-                        {item.price} ج.م
-                      </div>
-                      {item.originalPrice && (
-                        <div className="text-sm text-gray-500 line-through">
-                          {item.originalPrice} ج.م
+                      <div className="flex justify-between items-start">
+                        <div className="flex-1">
+                          <div className="flex items-center gap-4 mb-3">
+                            <h3 className="text-xl md:text-2xl font-bold text-white">
+                              {item.name}
+                            </h3>
+                            <span className="text-sm text-gray-400 uppercase tracking-wider">
+                              {item.nameEn}
+                            </span>
+                          </div>
+                          <p className="text-gray-300 text-sm md:text-base leading-relaxed mb-4">
+                            {item.description}
+                          </p>
+                          {item.subCategory && (
+                            <span className="inline-block bg-red-500/20 text-red-400 px-3 py-1 rounded-full text-xs">
+                              {item.subCategory}
+                            </span>
+                          )}
                         </div>
-                      )}
+                        <div className="text-left ml-6">
+                          <div className="text-2xl md:text-3xl font-bold text-red-500">
+                            {item.price} ج.م
+                          </div>
+                          {item.originalPrice && (
+                            <div className="text-sm text-gray-500 line-through">
+                              {item.originalPrice} ج.م
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                      
+                      {/* Dotted line similar to the sushi menu */}
+                      <div className="border-b border-dotted border-gray-600 my-4"></div>
+                      
+                      <div className="flex justify-between items-center text-sm text-gray-400">
+                        <span className="uppercase tracking-wider">
+                          {menuData[item.category]?.titleEn || ''}
+                        </span>
+                        <button className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg transition-colors duration-300 transform hover:scale-105">
+                        </button>
+                      </div>
                     </div>
-                  </div>
-                  
-                  {/* Dotted line similar to the sushi menu */}
-                  <div className="border-b border-dotted border-gray-600 my-4"></div>
-                  
-                  <div className="flex justify-between items-center text-sm text-gray-400">
-                    <span className="uppercase tracking-wider">
-                      {menuData[item.category]?.titleEn || ''}
-                    </span>
-                    <button className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg transition-colors duration-300 transform hover:scale-105">
-                    </button>
                   </div>
                 </div>
               ))}
@@ -649,7 +780,7 @@ const RestaurantMenu = () => {
         </div>
       </footer>
 
-      <style>{`
+      <style jsx>{`
         @keyframes fadeInUp {
           from {
             opacity: 0;
