@@ -82,12 +82,12 @@ const RestaurantMenu: React.FC = () => {
       "Dragon Hill": "https://i.postimg.cc/BQqCw73s/dragon-hill-meet.webp",
       "Mushroom Burger": "https://i.postimg.cc/nhSY2zST/musharom-meet.webp",
       "School Art": "https://i.postimg.cc/B67q9wzy/school-art-meet.webp",
-      "Triple Way": "https://e.top4top.io/p_3461iqlbj1.jpg?w=300&q=70",
+      "Triple Way": "https://i.postimg.cc/28Dzpv9C/triple-we-meet.webp",
       "Classic Cheese Beef + Fries": "https://i.postimg.cc/YS1G7kNP/classic-meet.webp",
       "Dragon Hill + Fries": "https://i.postimg.cc/BQqCw73s/dragon-hill-meet.webp",
       "Mushroom Burger + Fries": "https://i.postimg.cc/nhSY2zST/musharom-meet.webp",
       "School Art + Fries": "https://i.postimg.cc/B67q9wzy/school-art-meet.webp",
-      "Triple Way + Fries": "https://e.top4top.io/p_3461iqlbj1.jpg?w=300&q=70"
+      "Triple Way + Fries": "https://i.postimg.cc/28Dzpv9C/triple-we-meet.webp"
     },
     smashBurger: {
       "Smash Classic": "/src/images/smash/single-classic.jpg?w=300&q=70",
