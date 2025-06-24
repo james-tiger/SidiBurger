@@ -71,22 +71,22 @@ const RestaurantMenu: React.FC = () => {
       "Fries Packet": "/src/images/sides/fries.jpg?w=300&q=70"
     },
     SAUSAGE: {
-      "Classic Sausage": "https://a.top4top.io/p_3461fwbi11.jpg?w=300&q=70",
-      "Dragon Hill Sausage": "https://k.top4top.io/p_3461lthcp2.jpg?w=300&q=70",
-      "Mushroom Sausage": "https://i.top4top.io/p_3461so9651.jpg?w=300&q=70",
-      "Soul Art Sausage": "https://a.top4top.io/p_3461h2wsk1.jpg?w=300&q=70",
-      "Triple Way Sausage": "https://h.top4top.io/p_3461gpjak1.jpg?w=300&q=70"
+      "Classic Sausage": "https://i.postimg.cc/05ZSrkgR/classic-suadge.webp",
+      "Dragon Hill Sausage": "https://i.postimg.cc/52KpzBZJ/dragon-hill-saudge.webp",
+      "Mushroom Sausage": "https://i.postimg.cc/HxXwTtYP/muashrom-suadge.webp",
+      "Soul Art Sausage": "https://i.postimg.cc/zXsGG6fY/school-art-suadge.webp",
+      "Triple Way Sausage": "https://i.postimg.cc/PxSqfqCS/tripale-we-suadge.webp"
     },
     meat: {
-      "Classic Cheese Beef": "https://f.top4top.io/p_346196pcz2.jpg?w=300&q=70",
-      "Dragon Hill": "https://h.top4top.io/p_346103b9y4.jpg?w=300&q=70",
-      "Mushroom Burger": "https://g.top4top.io/p_346116zu03.jpg?w=300&q=70",
-      "School Art": "https://i.top4top.io/p_3461qcqoy5.jpg?w=300&q=70",
+      "Classic Cheese Beef": "https://i.postimg.cc/YS1G7kNP/classic-meet.webp",
+      "Dragon Hill": "https://i.postimg.cc/BQqCw73s/dragon-hill-meet.webp",
+      "Mushroom Burger": "https://i.postimg.cc/nhSY2zST/musharom-meet.webp",
+      "School Art": "https://i.postimg.cc/B67q9wzy/school-art-meet.webp",
       "Triple Way": "https://e.top4top.io/p_3461iqlbj1.jpg?w=300&q=70",
-      "Classic Cheese Beef + Fries": "https://f.top4top.io/p_346196pcz2.jpg?w=300&q=70",
-      "Dragon Hill + Fries": "https://h.top4top.io/p_346103b9y4.jpg?w=300&q=70",
-      "Mushroom Burger + Fries": "https://g.top4top.io/p_346116zu03.jpg?w=300&q=70",
-      "School Art + Fries": "https://i.top4top.io/p_3461qcqoy5.jpg?w=300&q=70",
+      "Classic Cheese Beef + Fries": "https://i.postimg.cc/YS1G7kNP/classic-meet.webp",
+      "Dragon Hill + Fries": "https://i.postimg.cc/BQqCw73s/dragon-hill-meet.webp",
+      "Mushroom Burger + Fries": "https://i.postimg.cc/nhSY2zST/musharom-meet.webp",
+      "School Art + Fries": "https://i.postimg.cc/B67q9wzy/school-art-meet.webp",
       "Triple Way + Fries": "https://e.top4top.io/p_3461iqlbj1.jpg?w=300&q=70"
     },
     smashBurger: {
