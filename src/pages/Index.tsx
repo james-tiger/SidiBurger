@@ -5,71 +5,109 @@ const RestaurantMenu = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState('all');
   const [animatedItems, setAnimatedItems] = useState([]);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
 
-  // Image paths for each menu item
+  // Preload critical images
+  useEffect(() => {
+    const preloadImages = async () => {
+      const imageUrls = [
+        // Hero background
+        "https://images.unsplash.com/photo-1571091718767-18b5b1457add?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80",
+        
+        // Featured menu items
+        "https://f.top4top.io/p_346196pcz2.jpg", // Classic Cheese Beef
+        "https://h.top4top.io/p_346103b9y4.jpg", // Dragon Hill
+        "https://a.top4top.io/p_3461fwbi11.jpg", // Classic Sausage
+        "/src/images/smash/single-classic.jpg",  // Smash Classic
+        "/src/images/chicken/country.jpg"        // Chicken
+      ];
+
+      const imagePromises = imageUrls.map(url => {
+        return new Promise((resolve, reject) => {
+          const img = new Image();
+          img.src = url;
+          img.onload = resolve;
+          img.onerror = reject;
+        });
+      });
+
+      try {
+        await Promise.all(imagePromises);
+        setImagesLoaded(true);
+      } catch (error) {
+        console.error("Error preloading images:", error);
+        // Continue even if some images fail to load
+        setImagesLoaded(true);
+      }
+    };
+
+    preloadImages();
+  }, []);
+
+  // Image paths for each menu item with optimized versions
   const itemImages = {
     appetizers: {
-      "Bacon": "/src/images/appetizers/bacon.jpg",
-      "Smoked Turkey": "/src/images/appetizers/smoked-turkey.jpg",
-      "Pickled Cucumber": "/src/images/appetizers/pickles.jpg",
-      "Mushroom": "/src/images/appetizers/mushroom.jpg",
-      "Jalapeño": "/src/images/appetizers/jalapeno.jpg",
-      "Cheese Sauce": "/src/images/appetizers/cheese-sauce.jpg",
-      "Pastrami": "/src/images/appetizers/pastrami.jpg",
-      "Premium Burger Patty": "/src/images/appetizers/premium-patty.jpg",
-      "Linked Burger Patty": "/src/images/appetizers/linked-patty.jpg"
+      "Bacon": "/src/images/appetizers/bacon.jpg?w=300&q=70",
+      "Smoked Turkey": "/src/images/appetizers/smoked-turkey.jpg?w=300&q=70",
+      "Pickled Cucumber": "/src/images/appetizers/pickles.jpg?w=300&q=70",
+      "Mushroom": "/src/images/appetizers/mushroom.jpg?w=300&q=70",
+      "Jalapeño": "/src/images/appetizers/jalapeno.jpg?w=300&q=70",
+      "Cheese Sauce": "/src/images/appetizers/cheese-sauce.jpg?w=300&q=70",
+      "Pastrami": "/src/images/appetizers/pastrami.jpg?w=300&q=70",
+      "Premium Burger Patty": "/src/images/appetizers/premium-patty.jpg?w=300&q=70",
+      "Linked Burger Patty": "/src/images/appetizers/linked-patty.jpg?w=300&q=70"
     },
     sauces: {
       "Classic Sauce": "",
-      "Spanish Sauce": "/src/images/sauces/spanish.jpg",
-      "Sidi Sauce": "/src/images/sauces/sidi.jpg",
-      "Cheese Sauce": "/src/images/sauces/cheese.jpg",
-      "Herb Sauce": "/src/images/sauces/herb.jpg"
+      "Spanish Sauce": "/src/images/sauces/spanish.jpg?w=300&q=70",
+      "Sidi Sauce": "/src/images/sauces/sidi.jpg?w=300&q=70",
+      "Cheese Sauce": "/src/images/sauces/cheese.jpg?w=300&q=70",
+      "Herb Sauce": "/src/images/sauces/herb.jpg?w=300&q=70"
     },
     sides: {
-      "3 Pieces Strips": "/src/images/sides/strips.jpg",
-      "Cheese Meal Fries": "/src/images/sides/cheese-fries.jpg",
-      "Sidi Cheese Fries": "/src/images/sides/sidi-fries.jpg",
-      "Fries Packet": "/src/images/sides/fries.jpg"
+      "3 Pieces Strips": "/src/images/sides/strips.jpg?w=300&q=70",
+      "Cheese Meal Fries": "/src/images/sides/cheese-fries.jpg?w=300&q=70",
+      "Sidi Cheese Fries": "/src/images/sides/sidi-fries.jpg?w=300&q=70",
+      "Fries Packet": "/src/images/sides/fries.jpg?w=300&q=70"
     },
     SAUSAGE: {
-      "Classic Sausage": "https://a.top4top.io/p_3461fwbi11.jpg",
-      "Dragon Hill Sausage": "https://k.top4top.io/p_3461lthcp2.jpg",
-      "Mushroom Sausage": "https://i.top4top.io/p_3461so9651.jpg",
-      "Soul Art Sausage": "https://a.top4top.io/p_3461h2wsk1.jpg",
-      "Triple Way Sausage": "https://h.top4top.io/p_3461gpjak1.jpg"
+      "Classic Sausage": "https://a.top4top.io/p_3461fwbi11.jpg?w=300&q=70",
+      "Dragon Hill Sausage": "https://k.top4top.io/p_3461lthcp2.jpg?w=300&q=70",
+      "Mushroom Sausage": "https://i.top4top.io/p_3461so9651.jpg?w=300&q=70",
+      "Soul Art Sausage": "https://a.top4top.io/p_3461h2wsk1.jpg?w=300&q=70",
+      "Triple Way Sausage": "https://h.top4top.io/p_3461gpjak1.jpg?w=300&q=70"
     },
     meat: {
-      "Classic Cheese Beef": "https://f.top4top.io/p_346196pcz2.jpg",
-      "Dragon Hill": "https://h.top4top.io/p_346103b9y4.jpg",
-      "Mushroom Burger": "https://g.top4top.io/p_346116zu03.jpg",
-      "School Art": "https://i.top4top.io/p_3461qcqoy5.jpg",
-      "Triple Way": "https://e.top4top.io/p_3461iqlbj1.jpg",
-      "Classic Cheese Beef + Fries": "https://f.top4top.io/p_346196pcz2.jpg",
-      "Dragon Hill + Fries": "https://h.top4top.io/p_346103b9y4.jpg",
-      "Mushroom Burger + Fries": "https://g.top4top.io/p_346116zu03.jpg",
-      "School Art + Fries": "https://i.top4top.io/p_3461qcqoy5.jpg",
-      "Triple Way + Fries": "https://e.top4top.io/p_3461iqlbj1.jpg"
+      "Classic Cheese Beef": "https://f.top4top.io/p_346196pcz2.jpg?w=300&q=70",
+      "Dragon Hill": "https://h.top4top.io/p_346103b9y4.jpg?w=300&q=70",
+      "Mushroom Burger": "https://g.top4top.io/p_346116zu03.jpg?w=300&q=70",
+      "School Art": "https://i.top4top.io/p_3461qcqoy5.jpg?w=300&q=70",
+      "Triple Way": "https://e.top4top.io/p_3461iqlbj1.jpg?w=300&q=70",
+      "Classic Cheese Beef + Fries": "https://f.top4top.io/p_346196pcz2.jpg?w=300&q=70",
+      "Dragon Hill + Fries": "https://h.top4top.io/p_346103b9y4.jpg?w=300&q=70",
+      "Mushroom Burger + Fries": "https://g.top4top.io/p_346116zu03.jpg?w=300&q=70",
+      "School Art + Fries": "https://i.top4top.io/p_3461qcqoy5.jpg?w=300&q=70",
+      "Triple Way + Fries": "https://e.top4top.io/p_3461iqlbj1.jpg?w=300&q=70"
     },
     smashBurger: {
-      "Smash Classic": "/src/images/smash/single-classic.jpg",
-      "Dragon Hill": "/src/images/smash/single-dragon.jpg",
-      "Mushroom Burger": "/src/images/smash/single-mushroom.jpg",
-      "School Art": "/src/images/smash/single-school-art.jpg",
-      "Double Smash Classic + Fries": "/src/images/smash/double-classic.jpg",
-      "Double Dragon Hill + Fries": "/src/images/smash/double-dragon.jpg",
-      "Double Mushroom Burger + Fries": "/src/images/smash/double-mushroom.jpg",
-      "Double School Art + Fries": "/src/images/smash/double-school-art.jpg",
-      "Triple Smash Classic + Fries": "/src/images/smash/triple-classic.jpg",
-      "Triple Dragon Hill + Fries": "/src/images/smash/triple-dragon.jpg",
-      "Triple Mushroom Burger + Fries": "/src/images/smash/triple-mushroom.jpg",
-      "Triple School Art + Fries": "/src/images/smash/triple-school-art.jpg"
+      "Smash Classic": "/src/images/smash/single-classic.jpg?w=300&q=70",
+      "Dragon Hill": "/src/images/smash/single-dragon.jpg?w=300&q=70",
+      "Mushroom Burger": "/src/images/smash/single-mushroom.jpg?w=300&q=70",
+      "School Art": "/src/images/smash/single-school-art.jpg?w=300&q=70",
+      "Double Smash Classic + Fries": "/src/images/smash/double-classic.jpg?w=300&q=70",
+      "Double Dragon Hill + Fries": "/src/images/smash/double-dragon.jpg?w=300&q=70",
+      "Double Mushroom Burger + Fries": "/src/images/smash/double-mushroom.jpg?w=300&q=70",
+      "Double School Art + Fries": "/src/images/smash/double-school-art.jpg?w=300&q=70",
+      "Triple Smash Classic + Fries": "/src/images/smash/triple-classic.jpg?w=300&q=70",
+      "Triple Dragon Hill + Fries": "/src/images/smash/triple-dragon.jpg?w=300&q=70",
+      "Triple Mushroom Burger + Fries": "/src/images/smash/triple-mushroom.jpg?w=300&q=70",
+      "Triple School Art + Fries": "/src/images/smash/triple-school-art.jpg?w=300&q=70"
     },
     chickenWraps: {
-      "Chicken": "/src/images/chicken/country.jpg",
-      "Gerald Chicken": "/src/images/chicken/gerald.jpg",
-      "KOR RAP Chicken": "/src/images/chicken/kor-rap.jpg",
-      "Chicken Wrap Roll": "/src/images/chicken/wrap-roll.jpg"
+      "Chicken": "/src/images/chicken/country.jpg?w=300&q=70",
+      "Gerald Chicken": "/src/images/chicken/gerald.jpg?w=300&q=70",
+      "KOR RAP Chicken": "/src/images/chicken/kor-rap.jpg?w=300&q=70",
+      "Chicken Wrap Roll": "/src/images/chicken/wrap-roll.jpg?w=300&q=70"
     }
   };
 
@@ -524,17 +562,18 @@ const RestaurantMenu = () => {
 
   const HeroSection = () => (
     <section id="home" className="relative min-h-screen bg-gradient-to-br from-black via-gray-900 to-black overflow-hidden">
-      {/* Background Image */}
+      {/* Background Image with loading state */}
       <div className="absolute inset-0">
-        <img 
-          src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" 
-          alt="Grilled food background"
-          loading="lazy"
-          decoding="async"
-          width="2072"
-          height="1381"
-          className="w-full h-full object-cover opacity-40"
-        />
+        {imagesLoaded ? (
+          <img 
+            src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" 
+            alt="Grilled food background"
+            className="w-full h-full object-cover opacity-40"
+            loading="eager"
+          />
+        ) : (
+          <div className="w-full h-full bg-gray-800 animate-pulse"></div>
+        )}
         <div className="absolute inset-0 bg-gradient-to-br from-red-900/60 to-black/80"></div>
         <div className="absolute top-20 left-20 w-32 h-32 bg-red-600/10 rounded-full animate-pulse"></div>
         <div className="absolute bottom-40 right-32 w-24 h-24 bg-red-500/10 rounded-full animate-pulse delay-700"></div>
@@ -593,6 +632,25 @@ const RestaurantMenu = () => {
       </div>
     </section>
   );
+
+  const MenuItemImage = ({ src, alt }) => {
+    const [loaded, setLoaded] = useState(false);
+    
+    return (
+      <div className="w-full md:w-1/3 h-48 md:h-auto rounded-xl overflow-hidden relative">
+        {!loaded && (
+          <div className="absolute inset-0 bg-gray-800 animate-pulse"></div>
+        )}
+        <img 
+          src={src} 
+          alt={alt}
+          className={`w-full h-full object-cover transform hover:scale-110 transition-transform duration-500 ${loaded ? 'opacity-100' : 'opacity-0'}`}
+          loading="lazy"
+          onLoad={() => setLoaded(true)}
+        />
+      </div>
+    );
+  };
 
   return (
     <div className="min-h-screen bg-black">
@@ -701,19 +759,8 @@ const RestaurantMenu = () => {
                   }}
                 >
                   <div className="flex flex-col md:flex-row gap-6">
-                    {/* Image Section */}
-                    <div className="w-full md:w-1/3 h-48 md:h-auto rounded-xl overflow-hidden bg-gray-900/50">
-                      <img 
-                        src={item.image || 'https://via.placeholder.com/300x300.png?text=SidiBurger'} 
-                        alt={item.nameEn || 'Menu Item'}
-                        loading="lazy"
-                        width="300"
-                        height="300"
-                        className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500 opacity-0 transition-opacity duration-500"
-                        onLoad={(e) => e.currentTarget.classList.remove('opacity-0')}
-                        decoding="async"
-                      />
-                    </div>
+                    {/* Image Section with optimized loading */}
+                    <MenuItemImage src={item.image} alt={item.nameEn} />
                     
                     {/* Content Section */}
                     <div className="flex-1">
