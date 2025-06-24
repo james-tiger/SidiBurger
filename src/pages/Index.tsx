@@ -1,11 +1,11 @@
 import { Menu, X } from "lucide-react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
-const RestaurantMenu = () => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeCategory, setActiveCategory] = useState('all');
-  const [animatedItems, setAnimatedItems] = useState([]);
-  const [imagesLoaded, setImagesLoaded] = useState(false);
+const RestaurantMenu: React.FC = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
+  const [activeCategory, setActiveCategory] = useState<string>('all');
+  const [animatedItems, setAnimatedItems] = useState<any[]>([]);
+  const [imagesLoaded, setImagesLoaded] = useState<boolean>(false);
 
   // Preload critical images
   useEffect(() => {
@@ -517,7 +517,7 @@ const RestaurantMenu = () => {
     }
   };
 
-  const categories = [
+  const categories: { key: string; name: string; nameEn: string }[] = [
     { key: 'all', name: 'الكل', nameEn: 'ALL' },
     { key: 'meat', name: 'اللحم', nameEn: 'MEAT' },
     { key: 'smashBurger', name: 'السماش برجر', nameEn: 'SMASH BURGER' },
@@ -528,9 +528,9 @@ const RestaurantMenu = () => {
     { key: 'sides', name: 'أصناف جانبية', nameEn: 'SIDES' }
   ];
 
-  const getFilteredItems = () => {
+  const getFilteredItems = (): any[] => {
     if (activeCategory === 'all') {
-      let allItems = [];
+      let allItems: any[] = [];
       Object.keys(menuData).forEach(key => {
         if (menuData[key].categories) {
           menuData[key].categories.forEach(category => {
@@ -567,9 +567,9 @@ const RestaurantMenu = () => {
         {imagesLoaded ? (
           <img 
             src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" 
-            alt="Grilled food background"
+            alt="Fast Load"
             className="w-full h-full object-cover opacity-40"
-            loading="eager"
+            loading="lazy"
           />
         ) : (
           <div className="w-full h-full bg-gray-800 animate-pulse"></div>
@@ -633,7 +633,7 @@ const RestaurantMenu = () => {
     </section>
   );
 
-  const MenuItemImage = ({ src, alt }) => {
+  const MenuItemImage = ({ src, alt }: { src: string; alt?: string }) => {
     const [loaded, setLoaded] = useState(false);
     
     return (
@@ -643,7 +643,7 @@ const RestaurantMenu = () => {
         )}
         <img 
           src={src} 
-          alt={alt}
+          alt={alt || "Fast Load"}
           className={`w-full h-full object-cover transform hover:scale-110 transition-transform duration-500 ${loaded ? 'opacity-100' : 'opacity-0'}`}
           loading="lazy"
           onLoad={() => setLoaded(true)}
@@ -826,7 +826,7 @@ const RestaurantMenu = () => {
             <div className="text-3xl font-bold text-red-500 mb-3 transform hover:scale-110 transition-transform duration-300">
                سيدي بـــرجر
             </div>
-            <p className="text-gray-400 text-lg">احنا اسياد البرجر</p>
+            <p className="text-gray-400 text-lg">احنا اسياد البرجر</p>
           </div>
           <div className="border-t border-gray-700 pt-6">
             <p className="text-gray-400 transform hover:text-white transition-colors duration-300">
