@@ -1,5 +1,31 @@
-import { Menu, X } from "lucide-react";
+// React & Hooks
 import { useState, useEffect } from "react";
+
+// Icons
+import { Menu, X } from "lucide-react";
+
+// Image Imports - Appetizers
+
+
+
+import dragonSausageImage from "/src/images/sausage/dragon.jpg";
+import soulArtSausageImage from "/src/images/sausage/school.jpg";
+// Image Imports - Sausage
+import classicSausageImage from "/src/images/sausage/classic.jpg";
+import mushroomSausageImage from "/src/images/sausage/muashrom.jpg";
+import tripleWaySausageImage from "/src/images/sausage/tripale.jpg";
+
+// Image Imports - Meat
+import classicMeatImage from "/src/images/meat/classic_meet.jpg";
+import mushroomMeatImage from "/src/images/meat/musharom_meet.jpg";
+import tripleWayMeatImage from "/src/images/meat/triple_we_meet.jpg";
+import schoolArtMeatImage from "/src/images/meat/school_art_meet.jpg";
+import dragonHillMeatImage from "/src/images/meat/dragon_hill_meet.jpg";
+
+import smashDragonImage from "/src/images/smash/single-dragon.jpg";
+import doubleDragonImage from "/src/images/smash/double-dragon.jpg";
+import tripleDragonImage from "/src/images/smash/triple-dragon.jpg";
+
 
 const RestaurantMenu = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -9,67 +35,67 @@ const RestaurantMenu = () => {
   // Image paths for each menu item
   const itemImages = {
     appetizers: {
-      "Bacon": "/src/images/appetizers/bacon.jpg",
-      "Smoked Turkey": "/src/images/appetizers/smoked-turkey.jpg",
-      "Pickled Cucumber": "/src/images/appetizers/pickles.jpg",
-      "Mushroom": "/src/images/appetizers/mushroom.jpg",
-      "Jalapeño": "/src/images/appetizers/jalapeno.jpg",
-      "Cheese Sauce": "/src/images/appetizers/cheese-sauce.jpg",
-      "Pastrami": "/src/images/appetizers/pastrami.jpg",
-      "Premium Burger Patty": "/src/images/appetizers/premium-patty.jpg",
-      "Linked Burger Patty": "/src/images/appetizers/linked-patty.jpg"
+      "Bacon": "baconImage",
+      "Smoked Turkey": "smokedTurkeyImage",
+      "Pickled Cucumber": "picklesImage",
+      "Mushroom": "mushroomImage",
+      "Jalapeño": "jalapenoImage",
+      "Cheese Sauce": "cheeseSauceImage",
+      "Pastrami": "pastramiImage",
+      "Premium Burger Patty": "premiumPattyImage",
+      "Linked Burger Patty": "linkedPattyImage"
     },
     sauces: {
-      "Classic Sauce": "",
-      "Spanish Sauce": "/src/images/sauces/spanish.jpg",
-      "Sidi Sauce": "/src/images/sauces/sidi.jpg",
-      "Cheese Sauce": "/src/images/sauces/cheese.jpg",
-      "Herb Sauce": "/src/images/sauces/herb.jpg"
+      "Classic Sauce": "classicSauceImage",
+      "Spanish Sauce": "spanishSauceImage",
+      "Sidi Sauce": "sidiSauceImage",
+      "Cheese Sauce": "cheeseSauceImage",
+      "Herb Sauce": "herbSauceImage"
     },
     sides: {
-      "3 Pieces Strips": "/src/images/sides/strips.jpg",
-      "Cheese Meal Fries": "/src/images/sides/cheese-fries.jpg",
-      "Sidi Cheese Fries": "/src/images/sides/sidi-fries.jpg",
-      "Fries Packet": "/src/images/sides/fries.jpg"
+      "3 Pieces Strips": "stripsImage",
+      "Cheese Meal Fries": "cheeseFriesImage",
+      "Sidi Cheese Fries": "sidiFriesImage",
+      "Fries Packet": "friesImage"
     },
     SAUSAGE: {
-      "Classic Sausage": "https://a.top4top.io/p_3461fwbi11.jpg",
-      "Dragon Hill Sausage": "https://k.top4top.io/p_3461lthcp2.jpg",
-      "Mushroom Sausage": "https://i.top4top.io/p_3461so9651.jpg",
-      "Soul Art Sausage": "https://a.top4top.io/p_3461h2wsk1.jpg",
-      "Triple Way Sausage": "https://h.top4top.io/p_3461gpjak1.jpg"
+      "Classic Sausage": classicSausageImage,
+      "Dragon Hill Sausage": dragonSausageImage,
+      "Mushroom Sausage": mushroomSausageImage,
+      "Soul Art Sausage": soulArtSausageImage,
+      "Triple Way Sausage": tripleWaySausageImage
     },
     meat: {
-      "Classic Cheese Beef": "https://f.top4top.io/p_346196pcz2.jpg",
-      "Dragon Hill": "https://h.top4top.io/p_346103b9y4.jpg",
-      "Mushroom Burger": "https://g.top4top.io/p_346116zu03.jpg",
-      "School Art": "https://i.top4top.io/p_3461qcqoy5.jpg",
-      "Triple Way": "https://e.top4top.io/p_3461iqlbj1.jpg",
-      "Classic Cheese Beef + Fries": "https://f.top4top.io/p_346196pcz2.jpg",
-      "Dragon Hill + Fries": "https://h.top4top.io/p_346103b9y4.jpg",
-      "Mushroom Burger + Fries": "https://g.top4top.io/p_346116zu03.jpg",
-      "School Art + Fries": "https://i.top4top.io/p_3461qcqoy5.jpg",
-      "Triple Way + Fries": "https://e.top4top.io/p_3461iqlbj1.jpg"
+      "Classic Cheese Beef": classicMeatImage,
+      "Dragon Hill": dragonHillMeatImage,
+      "Mushroom Burger": mushroomMeatImage,
+      "School Art": schoolArtMeatImage,
+      "Triple Way": tripleWayMeatImage,
+      "Classic Cheese Beef + Fries": classicMeatImage,
+      "Dragon Hill + Fries": dragonHillMeatImage,
+      "Mushroom Burger + Fries": mushroomMeatImage,
+      "School Art + Fries": schoolArtMeatImage,
+      "Triple Way + Fries": tripleWayMeatImage
     },
     smashBurger: {
-      "Smash Classic": "/src/images/smash/single-classic.jpg",
-      "Dragon Hill": "/src/images/smash/single-dragon.jpg",
-      "Mushroom Burger": "/src/images/smash/single-mushroom.jpg",
-      "School Art": "/src/images/smash/single-school-art.jpg",
-      "Double Smash Classic + Fries": "/src/images/smash/double-classic.jpg",
-      "Double Dragon Hill + Fries": "/src/images/smash/double-dragon.jpg",
-      "Double Mushroom Burger + Fries": "/src/images/smash/double-mushroom.jpg",
-      "Double School Art + Fries": "/src/images/smash/double-school-art.jpg",
-      "Triple Smash Classic + Fries": "/src/images/smash/triple-classic.jpg",
-      "Triple Dragon Hill + Fries": "/src/images/smash/triple-dragon.jpg",
-      "Triple Mushroom Burger + Fries": "/src/images/smash/triple-mushroom.jpg",
-      "Triple School Art + Fries": "/src/images/smash/triple-school-art.jpg"
+      "Smash Classic": "smashClassicImage",
+      "Dragon Hill": "smashDragonImage",
+      "Mushroom Burger": "smashMushroomImage",
+      "School Art": "smashSchoolArtImage",
+      "Double Smash Classic + Fries": "  ",
+      "Double Dragon Hill + Fries": "doubleDragonImage",
+      "Double Mushroom Burger + Fries": "doubleMushroomImage",
+      "Double School Art + Fries": "doubleSchoolArtImage",
+      "Triple Smash Classic + Fries": "",
+      "Triple Dragon Hill + Fries": " ",
+      "Triple Mushroom Burger + Fries": "tripleMushroomImage",
+      "Triple School Art + Fries": "tripleSchoolArtImage"
     },
     chickenWraps: {
-      "Chicken": "/src/images/chicken/country.jpg",
-      "Gerald Chicken": "/src/images/chicken/gerald.jpg",
-      "KOR RAP Chicken": "/src/images/chicken/kor-rap.jpg",
-      "Chicken Wrap Roll": "/src/images/chicken/wrap-roll.jpg"
+      "Chicken": "countryChickenImage",
+      "Gerald Chicken": "geraldChickenImage",
+      "KOR RAP Chicken": "korRapChickenImage",
+      "Chicken Wrap Roll": "wrapRollChickenImage"
     }
   };
 
